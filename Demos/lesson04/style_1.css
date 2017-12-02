@@ -1,0 +1,11 @@
+/* identificateur */
+#main {background-color: bisque;}
+
+/* class */
+.main {background-color: aqua;}
+
+/* element */
+div {background-color: gray;}
+
+
+#main {background-color: red;}

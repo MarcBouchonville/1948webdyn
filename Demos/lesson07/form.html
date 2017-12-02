@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+Exercice : 
+Un formulaire pour demande d'absences
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+        <link href="style/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+        </header>
+        <main class="form-style-10">
+            <h1>Absences<span>Complétez le formulaire d'absences</span></h1>
+            <form action="process.php" method="POST">
+                <div class="section"><span>1</span>Nom</div>
+                <div class="inner-wrap">
+                    <label for="nom">Nom de famille<input type="text" name="nom" id="nom" autofocus=""/></label>
+                    <label for="prenom">Prénom<input type="text" name="prenom" id="prenom"/></label>
+                </div>
+
+                <div class="section"><span>2</span>Dates</div>
+                <div class="inner-wrap">
+                    <label for="debut">Début<input type="date" name="debut" id="debut"/></label>
+                    <label for="fin">Fin<input type="date" name="fin" id="fin"/></label>
+                </div>
+
+                <div class="section"><span>3</span>Type</div>
+                <div class="inner-wrap">
+                    <div class="section section-radio">
+                        <div class="input-radio">
+                            <label for="complet">Jour complet
+                                <input type="radio" name="jour" id="vacances" value="complet"/>
+                            </label>
+                        </div>
+                        <div class="input-radio">
+                            <label for="matin">Matin
+                                <input type="radio" name="jour" id="matin" value="matin"/>
+                            </label>
+                        </div>
+                        <div class="input-radio">
+                            <label for="apres">Après-midi
+                                <input type="radio" name="jour" id="apres" value="apres"/>
+                            </label>
+                        </div>
+                    </div>
+                    <label for="type">Type
+                        <select name="type" id="type">
+                            <option value="conge">Congé</option>
+                            <option value="maladie">Maladie</option>
+                            <option value="absence">Absence non motivée</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="section"><span>4</span>Notes</div>
+                <div class="section">
+                    <label for="commentaire">
+                        <textarea cols="80" rows="5"></textarea>
+                    </label>
+                </div>
+                <div class="button-section">
+                    <input type="submit" value="Sousmettre"/>
+                </div>
+            </form>
+        </main>
+        <footer>
+            Copyrigh EPFC&copy;
+        </footer>
+    </body>
+</html>

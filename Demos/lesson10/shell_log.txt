@@ -1,0 +1,604 @@
+
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+´╗┐
+
+
+
+^C
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>php -a
+Interactive mode enabled
+
+echo "coucou";
+
+
+
+echo "coucou";
+
+
+
+^C
+C:\UwAmp\bin\php\php-7.0.3>php -a
+Interactive mode enabled
+
+^C
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+´╗┐
+
+
+for($i=0; $i<12; $i++) {echo "\n";};
+
+
+
+
+
+
+
+
+
+
+
+
+$_POST
+;
+
+
+*_GET;
+
+Parse error: syntax error, unexpected '*', expecting end of file in C:\UwAmp\bin\php\php-7.0.3\shell.php(12) : eval()'d
+code on line 1
+
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+´╗┐
+
+
+
+
+function n_li($nr) {
+echo "<ul>\n";
+
+Parse error: syntax error, unexpected end of file in C:\UwAmp\bin\php\php-7.0.3\shell.php(12) : eval()'d code on line 1
+
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+function n_li($nr) {
+echo "ha";
+
+Parse error: syntax error, unexpected end of file in C:\UwAmp\bin\php\php-7.0.3\shell.php(12) : eval()'d code on line 1
+
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+
+
+
+
+
+
+
+^C
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+function test() {
+echo "hi";
+}
+^C
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+
+
+function test() {
+echo "hi";
+}
+
+test();
+hi
+
+
+
+
+if( 4 < 10 ) {
+  echo "vrai";
+} else {
+  echo "false";
+
+}
+;
+vrai
+
+
+
+
+
+$a = [1, 2];
+
+echo $a[0]
+;
+1
+
+echo $a[1];
+2
+
+
+$b = ["zero", "premier", "second"]
+echo $b[0];
+
+Parse error: syntax error, unexpected 'echo' (T_ECHO) in C:\UwAmp\bin\php\php-7.0.3\shell.php(12) : eval()'d code on lin
+e 1
+
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+$b = ["zero", "premier", "second"];
+echo $b[0];
+zero
+
+
+echo sizeof($b);
+3
+
+
+
+echo $b->length;
+
+
+
+
+echo sizeof($b);
+3
+
+
+
+var_dump($b);
+array(3) {
+  [0]=>
+  string(4) "zero"
+  [1]=>
+  string(7) "premier"
+  [2]=>
+  string(6) "second"
+}
+
+
+
+
+$c = [ "a" => "le caractère a", "b" => "le caractère b", 5 => "cinq"];
+echo $c["a"]
+;
+le caractère a
+
+echo $c["b"];
+le caractère b
+
+
+
+
+echo $c[5];
+cinq
+
+
+
+$a = ["zero", "un", "deux", "trois"];
+
+var_dump($a);
+array(4) {
+  [0]=>
+  string(4) "zero"
+  [1]=>
+  string(2) "un"
+  [2]=>
+  string(4) "deux"
+  [3]=>
+  string(5) "trois"
+}
+
+
+for($i=0; $i<4; $i++) {
+  echo $a[$i];
+}
+;
+zeroundeuxtrois
+
+for($i=0; $i<4; $i++) {
+  echo $a[$i]."\n";
+};
+zero
+un
+deux
+trois
+
+$_POST = [ "email" => "jedepaepe@epfc.eu", "nom" => "Depaepe", "prenom" => "Jean-Michel", "commune" => 1000];
+
+for($i=0; $i<4; $i++) {
+};
+
+
+foreach( $_POST as $value) {
+  echo $value."\n";
+};
+jedepaepe@epfc.eu
+Depaepe
+Jean-Michel
+1000
+
+
+
+foreach( $_POST as $key => $value) {
+  echo $key . " : " . $value;
+};
+email : jedepaepe@epfc.eunom : Depaepeprenom : Jean-Michelcommune : 1000
+
+foreach( $_POST as $key => $value) {
+  echo "$key : $value\n";
+};
+email : jedepaepe@epfc.eu
+nom : Depaepe
+prenom : Jean-Michel
+commune : 1000
+
+
+foreach( $_POST as $key => $value) {
+  echo '$key : $value\n';
+};
+$key : $value\n$key : $value\n$key : $value\n$key : $value\n
+
+
+$jour_de_la_semaine = [1 => "lundi", 2 => "mardi", 3 => "mercredi", 4 => jeudi",
+5 => "vendredi", 6 => "samedi", 7 => "dimanche"];
+
+Parse error: syntax error, unexpected '",5 => "' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in C:\UwAmp\bin\php\php-7.0
+.3\shell.php(12) : eval()'d code on line 1
+
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+
+$jour_de_la_semaine = [1 => "lundi", 2 => "mardi", 3 => "mercredi", 4 => jeudi", 5 => "vendredi", 6 => "samedi", 7 => "d
+imanche"
+];
+
+Parse error: syntax error, unexpected '", 5 => "' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in C:\UwAmp\bin\php\php-7.
+0.3\shell.php(12) : eval()'d code on line 1
+
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+$jour_de_la_semaine = [1 => "lundi", 2 => "mardi", 3 => "mercredi", 4 => jeudi", 5 => "vendredi", 6 => "samedi", 7 => "d
+imanche"]
+;
+
+Parse error: syntax error, unexpected '", 5 => "' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in C:\UwAmp\bin\php\php-7.
+0.3\shell.php(12) : eval()'d code on line 1
+
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+$jour_de_la_semaine = [1 => "lundi", 2 => "mardi", 3 => "mercredi", 4 => "jeudi", 5 => "vendredi", 6 => "samedi", 7 => "
+dimanche"]
+;
+
+var_dump($jour_de_la_semaine);
+array(7) {
+  [1]=>
+  string(5) "lundi"
+  [2]=>
+  string(5) "mardi"
+  [3]=>
+  string(8) "mercredi"
+  [4]=>
+  string(5) "jeudi"
+  [5]=>
+  string(8) "vendredi"
+  [6]=>
+  string(6) "samedi"
+  [7]=>
+  string(8) "dimanche"
+}
+
+
+echo $jour_de_la_semaine[5];
+vendredi
+
+
+
+
+
+----------------------------------------
+
+
+echo $c["a"]
+;
+le caractère a
+
+echo $c["b"];
+le caractère b
+
+
+
+
+echo $c[5];
+cinq
+
+
+
+$a = ["zero", "un", "deux", "trois"];
+
+var_dump($a);
+array(4) {
+  [0]=>
+  string(4) "zero"
+  [1]=>
+  string(2) "un"
+  [2]=>
+  string(4) "deux"
+  [3]=>
+  string(5) "trois"
+}
+
+
+for($i=0; $i<4; $i++) {
+  echo $a[$i];
+}
+;
+zeroundeuxtrois
+
+for($i=0; $i<4; $i++) {
+  echo $a[$i]."\n";
+};
+zero
+un
+deux
+trois
+
+$_POST = [ "email" => "jedepaepe@epfc.eu", "nom" => "Depaepe", "prenom" => "Jean-Michel", "commune" => 1000];
+
+for($i=0; $i<4; $i++) {
+};
+
+
+foreach( $_POST as $value) {
+  echo $value."\n";
+};
+jedepaepe@epfc.eu
+Depaepe
+Jean-Michel
+1000
+
+
+
+foreach( $_POST as $key => $value) {
+  echo $key . " : " . $value;
+};
+email : jedepaepe@epfc.eunom : Depaepeprenom : Jean-Michelcommune : 1000
+
+foreach( $_POST as $key => $value) {
+  echo "$key : $value\n";
+};
+email : jedepaepe@epfc.eu
+nom : Depaepe
+prenom : Jean-Michel
+commune : 1000
+
+
+foreach( $_POST as $key => $value) {
+  echo '$key : $value\n';
+};
+$key : $value\n$key : $value\n$key : $value\n$key : $value\n
+
+
+$jour_de_la_semaine = [1 => "lundi", 2 => "mardi", 3 => "mercredi", 4 => jeudi",
+5 => "vendredi", 6 => "samedi", 7 => "dimanche"];
+
+Parse error: syntax error, unexpected '",5 => "' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in C:\UwAmp\bin\php\php-7.0
+.3\shell.php(12) : eval()'d code on line 1
+
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+
+$jour_de_la_semaine = [1 => "lundi", 2 => "mardi", 3 => "mercredi", 4 => jeudi", 5 => "vendredi", 6 => "samedi", 7 => "d
+imanche"
+];
+
+Parse error: syntax error, unexpected '", 5 => "' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in C:\UwAmp\bin\php\php-7.
+0.3\shell.php(12) : eval()'d code on line 1
+
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+$jour_de_la_semaine = [1 => "lundi", 2 => "mardi", 3 => "mercredi", 4 => jeudi", 5 => "vendredi", 6 => "samedi", 7 => "d
+imanche"]
+;
+
+Parse error: syntax error, unexpected '", 5 => "' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in C:\UwAmp\bin\php\php-7.
+0.3\shell.php(12) : eval()'d code on line 1
+
+C:\UwAmp\bin\php\php-7.0.3>php shell.php
+$jour_de_la_semaine = [1 => "lundi", 2 => "mardi", 3 => "mercredi", 4 => "jeudi", 5 => "vendredi", 6 => "samedi", 7 => "
+dimanche"]
+;
+
+var_dump($jour_de_la_semaine);
+array(7) {
+  [1]=>
+  string(5) "lundi"
+  [2]=>
+  string(5) "mardi"
+  [3]=>
+  string(8) "mercredi"
+  [4]=>
+  string(5) "jeudi"
+  [5]=>
+  string(8) "vendredi"
+  [6]=>
+  string(6) "samedi"
+  [7]=>
+  string(8) "dimanche"
+}
+
+
+echo $jour_de_la_semaine[5];
+vendredi
+
+
+
+^C
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>
+C:\UwAmp\bin\php\php-7.0.3>php P:\Depaepe\WebDyn\2018\Lesson10\test_script.php
+
+Parse error: syntax error, unexpected '$jour' (T_VARIABLE), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in P:\Depaepe\WebDyn\2
+018\Lesson10\test_script.php on line 12
+
+C:\UwAmp\bin\php\php-7.0.3>php P:\Depaepe\WebDyn\2018\Lesson10\test_script.php
+<ul><li>1 : lundi</li><li>2 : mardi</li><li>3 : mercredi</li><li>4 : jeudi</li><li>5 : vendredi</li><li>6 : samedi</li><
+li>7 : dimanche</li></ul>
+C:\UwAmp\bin\php\php-7.0.3>php P:\Depaepe\WebDyn\2018\Lesson10\test_script.php
+<ul>
+        <li>1 : lundi</li>
+        <li>2 : mardi</li>
+        <li>3 : mercredi</li>
+        <li>4 : jeudi</li>
+        <li>5 : vendredi</li>
+        <li>6 : samedi</li>
+        <li>7 : dimanche</li>
+</ul>
+
+C:\UwAmp\bin\php\php-7.0.3>echo prompt
+prompt
+
+C:\UwAmp\bin\php\php-7.0.3>echo %prompt%
+$P$G
+
+C:\UwAmp\bin\php\php-7.0.3>cd ..
+
+C:\UwAmp\bin\php>cd php-7.0.3
+
+C:\UwAmp\bin\php\php-7.0.3>set prompt="?"
+
+"?"
+"?"set prompt=?
+
+?
+?
+?
+?set prompt=>
+La syntaxe de la commande n'est pas correcte.
+?set prompt=!
+
+!
+!
+!
+!
+!set prompt=_
+
+_
+_
+_
+_
+_
+_
+_
+_set prompt=il fait beau
+
+il fait beau
+il fait beau
+il fait beau
+il fait beau
+il fait beau
+il fait beau
+il fait beau
+il fait beauset prompt=_
+
+_
+_
+_
+_
+_
+_set prompt=.
+
+.
+.
+.
+.
+.
+.php shell.php
+
+
+
+echo "hi";
+hi
+
+
+
+$connection = new PDO("mysql:host=localhost;","root", "root");
+
+Fatal error: Uncaught PDOException: could not find driver in C:\UwAmp\bin\php\php-7.0.3\shell.php(12) : eval()'d code:1
+Stack trace:
+#0 C:\UwAmp\bin\php\php-7.0.3\shell.php(12) : eval()'d code(1): PDO->__construct('mysql:host=loca...', 'root', 'root')
+#1 C:\UwAmp\bin\php\php-7.0.3\shell.php(12): eval()
+#2 {main}
+  thrown in C:\UwAmp\bin\php\php-7.0.3\shell.php(12) : eval()'d code on line 1
+
+.
+.php shell.php
+
+
+
+$sql = INSERT INTO `test` (`nom`) VALUES ('hi');
+
+Parse error: syntax error, unexpected 'INTO' (T_STRING) in C:\UwAmp\bin\php\php-7.0.3\shell.php(12) : eval()'d code on l
+ine 1
+
+.php shell.php
+
+
+$sql = "INSERT INTO `test` (`nom`) VALUES ('hi')";
+
+
+
+
+var_dump($sql);
+string(40) "INSERT INTO `test` (`nom`) VALUES ('hi')"
+
+
+
+$_POST = [ "nom" => "hi" ];
+var_dump($_POST);
+array(1) {
+  ["nom"]=>
+  string(2) "hi"
+}
+
+
+
+$sql = "INSERT INTO test (nom) VALUES ('Hi')";
+
+$nom = $_POST["nom"];
+
+
+echo $nom;
+hi
+
+
+
+$sql = "INSERT INTO test (nom) VALUES ($nom)";
+
+var_dump($sql);
+string(34) "INSERT INTO test (nom) VALUES (hi)"
+
+
+$sql = "INSERT INTO test (nom) VALUES ('$nom')";
+var_dump($sql);
+string(36) "INSERT INTO test (nom) VALUES ('hi')"
+
+
+
+
+echo "nom : $nom";
+nom : hi
+
+
+echo "nom : $_POST['nom']";
+
+Parse error: syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VAR
+IABLE) or number (T_NUM_STRING) in C:\UwAmp\bin\php\php-7.0.3\shell.php(12) : eval()'d code on line 1
+
+.
