@@ -14,14 +14,14 @@ and open the template in the editor.
         
         $email = $_POST["email"];
         $prenom = $_POST["prenom"];
-		$nom = $_POST["nom"];
+	$nom = $_POST["nom"];
         $telephone = $_POST["telephone"];
         $commune = $_POST["commune"];
         $commentaire = $_POST["commentaire"];
         
         try
         {
-            $commerceDB=new PDO('mysql:host=localhost;dbname=commerce;charset=utf8','root','root');
+            $commerceDB=new PDO('mysql:host=localhost;dbname=commerce;charset=utf16','root','root');
         }
         catch (exception $ex)
         {
