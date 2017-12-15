@@ -13,7 +13,7 @@ and open the template in the editor.
     <body>
         <div>
             <p>Hello
-            <?php echo $_GET["nomServer"]; ?>
+                <?php echo $_GET["nomServer"]; ?>
             </p>
         </div>
     </body>

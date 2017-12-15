@@ -19,6 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `isuzu`
 --
+DROP DATABASE isuzu;
 CREATE DATABASE IF NOT EXISTS `isuzu` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `isuzu`;
 
@@ -35,7 +36,8 @@ CREATE TABLE `clients` (
   `prenom` varchar(100) DEFAULT NULL,
   `telephone` char(10) DEFAULT NULL,
   `commune` varchar(100) DEFAULT NULL,
-  `commentaire` text
+  `commentaire` text,
+  primary key (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -79,12 +81,6 @@ INSERT INTO `communes` (`id_commune`, `nom`) VALUES
 --
 -- Index pour les tables exportées
 --
-
---
--- Index pour la table `clients`
---
-ALTER TABLE `clients`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `communes`

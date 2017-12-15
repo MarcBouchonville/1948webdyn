@@ -27,23 +27,22 @@ https://openclassrooms.com/courses/concevez-votre-site-web-avec-php-et-mysql/lir
             </p>
             <?php
         }   // fin du while
-
         ?>    
 
         // version pure PHP (note: ne sera pas exécuté car le $response->fetch() retourne directement false
         <?php
         while ($donnees = $reponse->fetch()) {
-        echo "<p><strong>Jeu</strong> : " . $donnees['nom'];
-        echo "<br />Le possesseur de ce jeu est : " . $donnees['possesseur'];
-        echo ", et il le vend à " . $donnees['prix'] . " euros !<br />";
-        echo "Ce jeu fonctionne sur " . $donnees['console'] . " et on peut y jouer à " . $donnees['nbre_joueurs_max'] . " au maximum<br />";
-        echo $donnees['possesseur'] . " a laissé ces commentaires sur " . $donnees['nom'] . " : <em>" . $donnees['commentaires'] . "</em>";
-        echo "</p>";
-    }   // fin du while
+            echo "<p><strong>Jeu</strong> : " . $donnees['nom'];
+            echo "<br />Le possesseur de ce jeu est : " . $donnees['possesseur'];
+            echo ", et il le vend à " . $donnees['prix'] . " euros !<br />";
+            echo "Ce jeu fonctionne sur " . $donnees['console'] . " et on peut y jouer à " . $donnees['nbre_joueurs_max'] . " au maximum<br />";
+            echo $donnees['possesseur'] . " a laissé ces commentaires sur " . $donnees['nom'] . " : <em>" . $donnees['commentaires'] . "</em>";
+            echo "</p>";
+        }   // fin du while
 
-    $reponse->closeCursor(); // Termine le traitement de la requête
-    ?>    
+        $reponse->closeCursor(); // Termine le traitement de la requête
+        ?>    
 
 
-</body>
+    </body>
 </html>

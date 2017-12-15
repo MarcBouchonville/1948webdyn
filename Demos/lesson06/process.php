@@ -19,8 +19,8 @@ and open the template in the editor.
     <body>
         <div>
             <p>Hello<br>
-            <?php echo $_GET["name"]; ?><br>              
-            <?php echo $_GET["prenom"];?>
+                <?php echo $_GET["name"]; ?><br>              
+                <?php echo $_GET["prenom"]; ?>
             </p>
 <!--            <p>Hello Depaepe Jean</p>-->
         </div>

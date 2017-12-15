@@ -26,7 +26,7 @@ $query = $pdo->query($sql);
             echo $record['description'] . '<br>';
             echo "<hr>";
         }
-        while($record = $query->fetch()) {
+        while ($record = $query->fetch()) {
             echo "via while<br>";
             echo $record['id'] . '<br>';
             echo $record['auteur'] . '<br>';
@@ -37,6 +37,6 @@ $query = $pdo->query($sql);
             echo "<hr>";
         }
         ?>
-        
+
     </body>
 </html>

@@ -19,10 +19,10 @@
 
             <img src="main-banner.jpg" alt="main banner" id="image">
         </header>
-        
-    <section id="main">           
+
+        <section id="main">           
             <h2>About Isuzu Ute</h2>
-                
+
             <p>
                 Based in Brisbane, Queensland, Isuzu UTE Australia was founded
                 in 2008 bringin the award winning Isuzu D-MAX to Australia
@@ -37,14 +37,14 @@
                 <br>Producing heavy, medium and light-duty trucks, buses, passenger vehicle engines and industrial-use
                 diesel engines, Isuzu Motors is at the forefront of the vehicle chassis and diesel engine technology.
             </p>
-            
+
             <p>
                 At Isuzu UTE Australia we specialise in the very best in new utes and SUV's. Our award winning Isuzu
                 D-MAX is now joined by the MU-X, our 7-seat family SUV. Both the D-MAX and MU-X come in a range
                 of 4x4 and 4x2 models; every D-MAX and MU-X we make is built around Isuzu's fuel-efficient, 
                 high-torque, 3.0 litre, 4 cylinder common-rail turbo diesel engine.
             </p>
-            
+
             <p>
                 Our ressources and our automotive knowledge are vast, and this shows in the quality of our product
                 and level of service. With a network of over 100 authorized Isuzu UTE dealerships across 
@@ -52,7 +52,7 @@
                 level of service and support througought the entire country.
             </p>
         </section>
-        
+
         <article>
             <p id="center-video">
                 <video controls>
@@ -60,9 +60,9 @@
                 </video>
             </p>
         </article>
-        
+
         <footer>
-             Copyright &copy; 2016 Isuzu Ute Australia
+            Copyright &copy; 2016 Isuzu Ute Australia
         </footer>
     </body>
 </html>
