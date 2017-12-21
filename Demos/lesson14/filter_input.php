@@ -1,10 +1,16 @@
 <?php
 // ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
-$form = 0;
-$model = array();
-if(isset($_GET['submit1'])) $form = 1;
-if(isset($_GET['submit2'])) $form = 2;
 
+// quel formulaire a été posté
+$form = 0;  // numéro du formulaire posté (0 : pas de formulaire)
+if(isset($_GET['submit1'])) {   // si la query string contient la clef "submit1"
+    $form = 1;                  // sert à indiquer que le formulaire 1 a été posté
+}
+if(isset($_GET['submit2'])) {   // si la query string contient la clef "submit2"
+    $form = 2;                  // sert à indiquer que le formulaire a été posté
+}
+
+$model = array();   // contient toutes les informations du formulaire
 $model['form'] = $form;
 switch ($form) {
     case 1:
