@@ -1,21 +1,20 @@
 <?php
 // ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
-
 // quel formulaire a été posté
 $form = 0;  // numéro du formulaire posté (0 : pas de formulaire)
-if(isset($_GET['submit1'])) {   // si la query string contient la clef "submit1"
+if (isset($_GET['submit1'])) {   // si la query string contient la clef "submit1"
     $form = 1;                  // sert à indiquer que le formulaire 1 a été posté
 }
-if(isset($_GET['submit2'])) {   // si la query string contient la clef "submit2"
+if (isset($_GET['submit2'])) {   // si la query string contient la clef "submit2"
     $form = 2;                  // sert à indiquer que le formulaire a été posté
 }
 
 $model = array();   // contient toutes les informations du formulaire
 $model['form'] = $form;
 switch ($form) {
-    case 1:
+    case 1: // validation input par input
         $model['pseudo'] = filter_input(INPUT_GET, 'pseudo', FILTER_SANITIZE_STRING);
-        $model['email'] = filter_input(INPUT_GET, 'email', FILTER_VALIDATE_EMAIL);        
+        $model['email'] = filter_input(INPUT_GET, 'email', FILTER_VALIDATE_EMAIL);
         break;
     case 2:
         $filter = [
@@ -40,14 +39,20 @@ switch ($form) {
         break;
 }
 $valid = true;
-if(in_array(NULL, $model, true)) {
+if (in_array(NULL, $model, true)) {
     $valid = false;
-} else if($form === 2) {
-    if($model['email'] !== $model['email2'] or $model['passwd'] !== $model['passwd2']) {
+} else if ($form === 2) {
+    if ($model['email'] !== $model['email2'] or $model['passwd'] !== $model['passwd2']) {
         $valid = false;
     }
 }
 $model['valid'] = $valid;
+
+function isPseudoValid($model) {
+    return $model["form"] === 1 && is_null($model["email"]);
+}
+
+
 ?>
 <!DOCTYPE html>
 <!--
@@ -87,20 +92,32 @@ ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
             .form div label::after {
                 content: ' : ';
             }
+            .error {
+                font-family: courier, courier new, serif;
+                color: red;
+                font-weight: bold;
+                font-style: italic;
+            }
         </style>
     </head>
     <body>
         <div id="response" class="debug">
-            <?php
-            var_dump($model);
-            ?>
+<?php
+var_dump($model);
+?>
         </div>
         <div id="conteneur1" class="form">
             <h3>form 1</h3>
             <form id="form1" method="GET" action="filter_input.php">
+                <div class="error">
+                    <p>
+                        <span id="error_pseudo">pseudo doit contenir minimum 3 caractères</span> <br>
+                        <span id="error_email">email doit être une adresse email valide</span>
+                    </p>
+                </div>
                 <div>
                     <label id="pseudo">pseudo</label>
-                    <input type="text" id="pseudo" name="pseudo" required />
+                    <input type="text" id="pseudo" name="pseudo" minlength="3" maxlength="8" required />
                 </div>
                 <div>
                     <label id="email">email</label>
