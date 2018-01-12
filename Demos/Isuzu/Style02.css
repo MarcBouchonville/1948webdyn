@@ -9,6 +9,11 @@ fieldset{
 	border: unset;
 }
 
+.form-style-2-heading
+{
+    font-weight: bold;
+}
+
 .form-style-2 .inner-wrap{
     padding: 30px;
     background: #F8F8F8;
