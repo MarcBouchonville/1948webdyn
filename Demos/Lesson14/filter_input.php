@@ -13,7 +13,14 @@ $model = array();   // contient toutes les informations du formulaire
 $model['form'] = $form;
 switch ($form) {
     case 1: // validation input par input
-        $model['pseudo'] = filter_input(INPUT_GET, 'pseudo', FILTER_SANITIZE_STRING);
+        echo ' la var : ' . htmlspecialchars($_GET["pseudo"]);
+        
+        if (htmlspecialchars($_GET['pseudo']) == NULL) {
+            echo 'test valeur null';
+        } else {
+            $model['pseudo'] = filter_input(INPUT_GET, 'pseudo', FILTER_SANITIZE_STRING);
+        }
+        
         $model['email'] = filter_input(INPUT_GET, 'email', FILTER_VALIDATE_EMAIL);
         break;
     case 2:
