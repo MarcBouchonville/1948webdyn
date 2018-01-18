@@ -28,7 +28,12 @@ $valid = filter_input(INPUT_GET, "isValid", FILTER_SANITIZE_NUMBER_INT);
 //                    |          cléf ($_GET['isValid']
 //                    prend la variable $_GET
 
-echo $_GET['isValid'] . " ==filter_input==> " . $valid . "<br>";
+if(isset($_GET['isValid'])) {
+    echo $_GET['isValid'] . " ==filter_input==> " . $valid . "<br>";
+} else {
+    echo '$_GET ne contient pas isValid ==filter_input==> ' . $valid . "<br>";
+}
+
 echo "test d'addition : 2+valid =? " . (2 + $valid) . "<br>";
 echo "</div>";
 ?>
@@ -40,6 +45,7 @@ echo "</div>";
         <style>
             .error {
                 color: red;
+                <?php if($valid) {?>display:  none <?php }?>;
             }
             .error-star {
                 font-size: 2em;
