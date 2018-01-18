@@ -1,7 +1,14 @@
 <?php
 // ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
 // quel formulaire a été posté
+
+/*  INITIALISATION */
+
 $form = 0;  // numéro du formulaire posté (0 : pas de formulaire)
+$model = array();   // contient toutes les informations du formulaire
+$msg1 = "";
+$msg2 = "";
+
 if (isset($_GET['submit1'])) {   // si la query string contient la clef "submit1"
     $form = 1;                  // sert à indiquer que le formulaire 1 a été posté
 }
@@ -9,18 +16,11 @@ if (isset($_GET['submit2'])) {   // si la query string contient la clef "submit2
     $form = 2;                  // sert à indiquer que le formulaire a été posté
 }
 
-$model = array();   // contient toutes les informations du formulaire
+
 $model['form'] = $form;
 switch ($form) {
     case 1: // validation input par input
-        echo ' la var : ' . htmlspecialchars($_GET["pseudo"]);
-        
-        if (htmlspecialchars($_GET['pseudo']) == NULL) {
-            echo 'test valeur null';
-        } else {
-            $model['pseudo'] = filter_input(INPUT_GET, 'pseudo', FILTER_SANITIZE_STRING);
-        }
-        
+        $model['pseudo'] = filter_input(INPUT_GET, 'pseudo', FILTER_SANITIZE_STRING);
         $model['email'] = filter_input(INPUT_GET, 'email', FILTER_VALIDATE_EMAIL);
         break;
     case 2:
@@ -48,6 +48,12 @@ switch ($form) {
 $valid = true;
 if (in_array(NULL, $model, true)) {
     $valid = false;
+    if (isset($model['pseudo'])) {
+        $msg1 = 'pseudo doit contenir minimum 3 caractères';
+    }
+    if (!empty($model['email'])) {
+        $msg2 = 'email doit être une adresse email valide';
+    }
 } else if ($form === 2) {
     if ($model['email'] !== $model['email2'] or $model['passwd'] !== $model['passwd2']) {
         $valid = false;
@@ -55,12 +61,9 @@ if (in_array(NULL, $model, true)) {
 }
 $model['valid'] = $valid;
 
-function isPseudoValid($model) {
-    return $model["form"] === 1 && is_null($model["email"]);
-}
-
 
 ?>
+
 <!DOCTYPE html>
 <!--
 ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
@@ -106,20 +109,10 @@ ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
                 font-style: italic;
             }
             #error_pseudo {
-                    <?php
-                        if (empty($model['pseudo'])) {
-                     ?>
-                            display: inline-block;
-                    <?php } else {
-                    ?>
-                            visibility: hidden;
-                    <?php }
-                    ?>
-
+                 display: inline-block;
             }
-            
             #error_email {
-                visibility: hidden;
+                display: inline-block;
             }
         </style>
     </head>
@@ -135,8 +128,17 @@ var_dump($model);
                 <div class="error">
                     <p>
 
-                        <span id="error_pseudo">pseudo doit contenir minimum 3 caractères</span> <br>
-                        <span id="error_email">email doit être une adresse email valide</span>
+                        <span id="error_pseudo">
+                            <?php
+                                echo "résultat : " . $msg1;
+                            ?>
+                            <p>ceci est un test</p>
+                            </span> <br>
+                        <span id="error_email">
+                            <?php
+                                echo $msg2;
+                            ?>
+                        </span>
                     </p>
                 </div>
                 <div>
