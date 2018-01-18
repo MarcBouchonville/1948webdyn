@@ -16,7 +16,6 @@ if (isset($_GET['submit2'])) {   // si la query string contient la clef "submit2
     $form = 2;                  // sert à indiquer que le formulaire a été posté
 }
 
-
 $model['form'] = $form;
 switch ($form) {
     case 1: // validation input par input
@@ -49,10 +48,10 @@ $valid = true;
 if (in_array(NULL, $model, true)) {
     $valid = false;
     if (isset($model['pseudo'])) {
-        $msg1 = 'pseudo doit contenir minimum 3 caractères';
+        $msg1 = 'pseudo doit contenir minimum 3 caract�res';
     }
     if (!empty($model['email'])) {
-        $msg2 = 'email doit être une adresse email valide';
+        $msg2 = 'email doit �tre une adresse email valide';
     }
 } else if ($form === 2) {
     if ($model['email'] !== $model['email2'] or $model['passwd'] !== $model['passwd2']) {
