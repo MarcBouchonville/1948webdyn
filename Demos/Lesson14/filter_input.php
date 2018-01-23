@@ -6,8 +6,8 @@
 
 $form = 0;  // numéro du formulaire posté (0 : pas de formulaire)
 $model = array();   // contient toutes les informations du formulaire
-$msg1 = "";
-$msg2 = "";
+$msg1 = "debut";
+$msg2 = "debut";
 
 if (isset($_GET['submit1'])) {   // si la query string contient la clef "submit1"
     $form = 1;                  // sert à indiquer que le formulaire 1 a été posté
@@ -19,8 +19,11 @@ if (isset($_GET['submit2'])) {   // si la query string contient la clef "submit2
 $model['form'] = $form;
 switch ($form) {
     case 1: // validation input par input
+
         $model['pseudo'] = filter_input(INPUT_GET, 'pseudo', FILTER_SANITIZE_STRING);
         $model['email'] = filter_input(INPUT_GET, 'email', FILTER_VALIDATE_EMAIL);
+        echo $_GET['pseudo'] . " ==> pseudo = " . $model['pseudo'];     // test pour afficher
+                                                                        // la valeur de pseudo
         break;
     case 2:
         $filter = [
@@ -47,12 +50,6 @@ switch ($form) {
 $valid = true;
 if (in_array(NULL, $model, true)) {
     $valid = false;
-    if (isset($model['pseudo'])) {
-        $msg1 = 'pseudo doit contenir minimum 3 caract�res';
-    }
-    if (!empty($model['email'])) {
-        $msg2 = 'email doit �tre une adresse email valide';
-    }
 } else if ($form === 2) {
     if ($model['email'] !== $model['email2'] or $model['passwd'] !== $model['passwd2']) {
         $valid = false;
@@ -108,10 +105,24 @@ ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
                 font-style: italic;
             }
             #error_pseudo {
-                 display: inline-block;
+                <?php
+                    if (empty($_GET['pseudo'])) {
+                        $msg1 = "pseudo doit contenir minimum 3 caracteres !";
+                ?>
+                    display: inline-block;
+                <?php } else { ?>
+                    display: none;
+                <?php } ?>
             }
             #error_email {
-                display: inline-block;
+                <?php
+                    if (empty($_GET['email'])) {
+                        $msg2 = "email doit etre une adresse email valide : lettre(s) + @ + . + extension";
+                ?>
+                    display: inline-block;
+                <?php } else { ?>
+                    display: none;
+                <?php } ?>
             }
         </style>
     </head>
@@ -131,7 +142,6 @@ var_dump($model);
                             <?php
                                 echo "résultat : " . $msg1;
                             ?>
-                            <p>ceci est un test</p>
                             </span> <br>
                         <span id="error_email">
                             <?php
@@ -142,11 +152,11 @@ var_dump($model);
                 </div>
                 <div>
                     <label id="pseudo">pseudo</label>
-                    <input type="text" id="pseudo" name="pseudo" minlength="3" maxlength="8" required />
+                    <input type="text" id="pseudo" name="pseudo" minlength="3" maxlength="8" />
                 </div>
                 <div>
                     <label id="email">email</label>
-                    <input type="email" id="email" name="email" required />
+                    <input type="email" id="email" name="email" />
                 </div>
                 <div>
                     <input type="submit" name="submit1" value="envoyer" />
