@@ -1,5 +1,8 @@
 <?php
-//$ville = $_POST["ville"];
+/**
+ * Vérification que l'attribut "required" de l'élément "input" ne pose pas de problème
+ */
+//$ville = $_POST["ville"]; // pas sécurisé, il est préférable d'utiliser le code ci-dessus
 $ville = filter_input(INPUT_POST, "ville", FILTER_SANITIZE_STRING);
 var_dump($ville);   // pour debug
 ?>
