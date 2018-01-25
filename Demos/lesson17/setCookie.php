@@ -29,7 +29,7 @@ var_dump($ville);   // debug seulement
     <body>
         <h1>Set Cookie Demo</h1>
         <p>
-            <?php echo "cookie: " . $ville; ?>   <!-- bad practice - affiche directement données du monde extérieur-->
+            <?php echo "cookie: " . $ville; ?>
         </p>
         <h3>Parcourir $_COOKIE</h3>
         <ul>
