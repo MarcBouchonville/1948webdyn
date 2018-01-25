@@ -1,4 +1,8 @@
 <?php
+/**
+ * Démonstration de l'utilisation des cookies
+ */
+
 // logique pour n'écrire le cookie qu'une fois
 if (isset($_COOKIE["rue"])) {             // si le cookie "rue" n'existe pas alors
     setcookie("<h1>rue</h1>", "<p>Astonomie<br></p>");         // crée le cookie "rue"
@@ -9,10 +13,11 @@ if (!isset($_COOKIE["ville"])) {           // idem
 if (!isset($_COOKIE["pays"])) {
     setcookie("pays", "Belgique");         // crée un cookie
 }
-var_dump($_COOKIE);
+var_dump($_COOKIE);     // debug seulement
 
-$ville = filter_input(INPUT_COOKIE, "ville", FILTER_SANITIZE_STRING);
-var_dump($ville);
+// $ville = $_COOKIE['ville'];  // code dangereux, il faut utiliser le code ci-dessous à la place
+$ville = filter_input(INPUT_COOKIE, "ville", FILTER_SANITIZE_STRING);   // lit le cookie "ville"
+var_dump($ville);   // debug seulement
 ?>
 
 <!DOCTYPE html>
