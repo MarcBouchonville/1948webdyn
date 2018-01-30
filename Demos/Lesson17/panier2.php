@@ -18,7 +18,6 @@ switch ($item)
 {
     case "bahamas":
         $a = true ;
-        echo "item : " . $item . "\n";
         break;
     case "mont blanc" :
         $a = true ;
@@ -27,11 +26,15 @@ switch ($item)
         $a = true ;
         break;
     default :
-        echo 'Choisir entre bahamas, mont blanc OU thalasso !' . "\r" . "\n";
+        echo 'Choisir entre bahamas, mont blanc OU thalasso !' . "\r" . "\n"; ?>
+<br />
+<?php
 }
 
 if ($a) {
-    echo '$a = ' . "$a" . "\r" . "\n";
+    echo '$a = ' . "$a"; ?>
+    <br/> 
+    <?php
     if ($panier=='') {
         $panier = $item ;
     } else {
@@ -60,8 +63,9 @@ echo '*****' . "\r" . "\n";
         <h3>resultat</h3>
         
         <?php
-            echo "panier : " . $panier;
-            echo "\n";
+            echo "panier : " . $panier; ?>
+            <br/>
+            <?php
             echo "item : " . $item;
         ?>
         
