@@ -43,7 +43,7 @@ if ($a) {
 }
 
 setcookie('panier', $panier);
-echo 'Le panier contient : ' . $panier . "\r" . "\n";
+echo 'Le panier contient : ' . $panier;
 echo '*****' . "\r" . "\n";
 
 ?>
