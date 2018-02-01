@@ -9,7 +9,7 @@
     <body>
         <form action="process.php" method="POST">
             <div>
-            <input type="text" name="nom" placeholder="votre nom">
+                <input type="text" name="nom" placeholder="votre nom">
             </div>
             <div>
                 <input type="email" name="email" placeholder="votre email">
