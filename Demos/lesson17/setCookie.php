@@ -45,7 +45,7 @@ var_dump($ville);   // debug seulement
             <h3>Parcourir $_COOKIE - version sécurisée</h3>
             <ul>
                 <?php
-                foreach ($_COOKIE as $ key => $value) {
+                foreach ($_COOKIE as $key => $value) {
                     echo '<li>' . filter_var($key, FILTER_SANITIZE_STRING) .
                             ' => ' . filter_var($value, FILTER_SANITIZE_STRING);    // version sécurisée
                 }            
