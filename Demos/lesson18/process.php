@@ -3,9 +3,9 @@ $valid = isset($_POST['nom']) && isset($_POST['email']);    // le formulaire est
 
 if ($valid) {       // si le formulaire est rempli
     $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);         // nettoie $_POST['nom') et assigne à $nom
-    setcookie('nom', $nom, time() + 3600 * 24, null, null, false, true);    // crée le cookie (ou le mettre à jour)
+    setcookie('nom', $nom, time() + 3600 * 24, "/", null, false, true);    // crée le cookie (ou le mettre à jour)
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);     // idem pour email
-    setcookie('email', $email, time() + 3600 * 24, null, null, false, true);
+    setcookie('email', $email, time() + 3600 * 24, "/", null, false, true);
 }
 ?>
 <!DOCTYPE html>
