@@ -8,19 +8,6 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>1-Sign</title>
-            <script type="text/javascript">
-                    function verif(nom, email)
-                    {
-                            if ((nom === undefined) || (email === undefined))
-                            {
-                                    alert("les 2 champs doivent être complétés !");
-                                    return false;
-                            } else {
-                                    alert("ok");
-                                    return true;
-                            }
-                    }
-            </script>
     </head>
     <body>
         <form action="process.php" method="POST">
@@ -35,7 +22,7 @@ and open the template in the editor.
                 <br>
             </div>
             <div>
-                <input type="submit" value="Ok" onclick="verif(nom, email);"/>
+                <input type="submit" value="Ok" />
             </div>
         </form>
     </body>
