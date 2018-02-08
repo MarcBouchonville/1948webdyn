@@ -1,11 +1,14 @@
 <?php
+if( ! session_start()) {
+    error_log(date("Y-m-d h:m:s") . " ERROR - " . __FILE__ . " - " . "JMD checkt sign.php");
+}
 $valid = isset($_POST['nom']) && isset($_POST['email']);    // le formulaire est-il rempli
 
 if ($valid) {       // si le formulaire est rempli
     $nom = filter_input(INPUT_POST, 'nom', FILTER_SANITIZE_STRING);         // nettoie $_POST['nom') et assigne à $nom
-    setcookie('nom', $nom, time() + 3600 * 24, "/", null, false, true);    // crée le cookie (ou le mettre à jour)
+    $_SESSION['nom'] = $nom;    // enregistre nom dans la session (via $_SESSION)
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);     // idem pour email
-    setcookie('email', $email, time() + 3600 * 24, "/", null, false, true);
+    $_SESSION['email'] = $email;
 }
 ?>
 <!DOCTYPE html>

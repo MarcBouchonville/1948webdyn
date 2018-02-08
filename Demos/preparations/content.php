@@ -1,12 +1,15 @@
 <?php
+if( ! session_start()) {
+    error_log(date("Y-m-d h:m:s") . " ERROR - " . __FILE__ . " - " . "JMD checkt sign.php");
+}
 // les cookies sont-ils présents
-$valid = isset($_COOKIE['nom']) && isset($_COOKIE['email']);
+$valid = isset($_SESSION['nom']) && isset($_SESSION['email']);
 
 if ($valid) {
-    $nom = filter_input(INPUT_COOKIE, 'nom', FILTER_SANITIZE_STRING);
-    $email = filter_input(INPUT_COOKIE, 'email', FILTER_SANITIZE_STRING);
+    $nom = filter_var($_SESSION['nom'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_SESSION['email'], FILTER_SANITIZE_STRING);
 } else {    // redirige sur sign.php
-    header('Location: sign.php');
+    //header('Location: sign.php');
 }
 ?>
 
