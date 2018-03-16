@@ -13,6 +13,7 @@
 <html>
     <head>
         <title>Game ships</title>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="ships">
