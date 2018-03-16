@@ -9,5 +9,34 @@ and open the template in the editor.
 */
 .ships>div:nth-child(1)>div
 {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 10px solid white;
+    background-color: gray;
     
+}
+
+.ships>div:nth-child(2)>div {
+    display: inline-block;
+    height: 20px;
+    border: 10px solid white;
+    width: 30px;
+    background-color: gray;
+}
+
+.ships>div:nth-child(3)>div {
+    display: inline-block;
+    height: 20px;
+    border: 10px solid white;
+    width: 45px;
+    background-color: gray;
+}
+
+.ships>div:nth-child(4)>div {
+    display: inline-block;
+    height: 20px;
+    width: 60px;
+    border: 10px solid white;
+    background-color: gray;
 }
