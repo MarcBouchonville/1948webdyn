@@ -1,8 +1,11 @@
 <?php
     session_start();
     
-    if (isset(['toto'])) {
-        
+    if (isset($_SESSION['toto'])) {
+        $toto = $_SESSION['toto'];
+    }
+    if (isset($_SESSION['auteur'])) {
+        $auteur = $_SESSION['auteur'];
     }
 ?>
 
