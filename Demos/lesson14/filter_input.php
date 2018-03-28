@@ -1,12 +1,11 @@
 <?php
 // ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
-
 // quel formulaire a été posté
 $form = 0;  // numéro du formulaire posté (0 : pas de formulaire)
-if(isset($_GET['submit1'])) {   // si la query string contient la clef "submit1"
+if (isset($_GET['submit1'])) {   // si la query string contient la clef "submit1"
     $form = 1;                  // sert à indiquer que le formulaire 1 a été posté
 }
-if(isset($_GET['submit2'])) {   // si la query string contient la clef "submit2"
+if (isset($_GET['submit2'])) {   // si la query string contient la clef "submit2"
     $form = 2;                  // sert à indiquer que le formulaire a été posté
 }
 
@@ -15,7 +14,7 @@ $model['form'] = $form;
 switch ($form) {
     case 1:
         $model['pseudo'] = filter_input(INPUT_GET, 'pseudo', FILTER_SANITIZE_STRING);
-        $model['email'] = filter_input(INPUT_GET, 'email', FILTER_VALIDATE_EMAIL);        
+        $model['email'] = filter_input(INPUT_GET, 'email', FILTER_VALIDATE_EMAIL);
         break;
     case 2:
         $filter = [
@@ -40,12 +39,18 @@ switch ($form) {
         break;
 }
 $valid = true;
-if(in_array(NULL, $model, true)) {
-    $valid = false;
-} else if($form === 2) {
-    if($model['email'] !== $model['email2'] or $model['passwd'] !== $model['passwd2']) {
-        $valid = false;
+if ($form === 2) {
+    if ($model['email'] !== $model['email2']) {
+        $model['email'] = NULL;
+        $model['email2'] = NULL;
     }
+    if ($model['passwd'] !== $model['passwd2']) {
+        $model['passwd'] = NULL;
+        $model['passwd2'] = NULL;
+    }
+}
+if (in_array(NULL, $model, true)) {
+    $valid = false;
 }
 $model['valid'] = $valid;
 ?>
@@ -87,11 +92,24 @@ ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
             .form div label::after {
                 content: ' : ';
             }
+            .error {
+                font-size: 0.8em;
+                color: red;
+                padding: 0.5em;
+                border-radius: 0.3em;
+            }
         </style>
     </head>
     <body>
         <div id="response" class="debug">
             <?php
+            echo "_GET<br>";
+            var_dump($_GET);
+            if (isset($result)) {
+                echo "result<br>";
+                var_dump($result);
+            }
+            echo "model<br>";
             var_dump($model);
             ?>
         </div>
@@ -100,11 +118,29 @@ ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
             <form id="form1" method="GET" action="filter_input.php">
                 <div>
                     <label id="pseudo">pseudo</label>
-                    <input type="text" id="pseudo" name="pseudo" required />
+                    <?php 
+                    $value = "";
+                    if ($form === 1 && ! is_null($model['pseudo'])) { 
+                        $value = $model['pseudo'];
+                    }
+                    ?>
+                    <input type="text" id="pseudo" name="pseudo" value="<?php echo $value ?>" required autofocus />
+                    <?php if ($form === 1 && is_null($model['pseudo'])) { ?>
+                        <span id="err_pseudo" class="error">Veuillez indiquer votre pseudo</span>
+                    <?php } ?>
                 </div>
                 <div>
                     <label id="email">email</label>
-                    <input type="email" id="email" name="email" required />
+                    <?php 
+                    $value = "";
+                    if ($form === 1 && ! is_null($model['email'])) { 
+                        $value = $model['email'];
+                    }
+                    ?>
+                    <input type="email" id="email" name="email" value="<?php echo $value?>" required />
+                    <?php if ($form === 1 && is_null($model['email'])) { ?>
+                        <span id="err_pseudo" class="error">Veuillez indiquer votre email</span>
+                    <?php } ?>
                 </div>
                 <div>
                     <input type="submit" name="submit1" value="envoyer" />

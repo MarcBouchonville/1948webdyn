@@ -1,4 +1,5 @@
 <?php
+// code exploratoire, à exécuter dans la console
 echo false;
 echo true;
 echo (0 == false);
