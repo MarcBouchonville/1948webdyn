@@ -12,7 +12,7 @@ if (isset($_GET['submit2'])) {   // si la query string contient la clef "submit2
 $model = array();   // contient toutes les informations du formulaire
 $model['form'] = $form;
 switch ($form) {
-    case 1:
+    case 1: // validation input par input
         $model['pseudo'] = filter_input(INPUT_GET, 'pseudo', FILTER_SANITIZE_STRING);
         $model['email'] = filter_input(INPUT_GET, 'email', FILTER_VALIDATE_EMAIL);
         break;
@@ -39,20 +39,23 @@ switch ($form) {
         break;
 }
 $valid = true;
-if ($form === 2) {
-    if ($model['email'] !== $model['email2']) {
-        $model['email'] = NULL;
-        $model['email2'] = NULL;
-    }
-    if ($model['passwd'] !== $model['passwd2']) {
-        $model['passwd'] = NULL;
-        $model['passwd2'] = NULL;
+if (in_array(NULL, $model, true)) {
+    $valid = false;
+} else if ($form === 2) {
+    if ($model['email'] !== $model['email2'] or $model['passwd'] !== $model['passwd2']) {
+        $valid = false;
     }
 }
 if (in_array(NULL, $model, true)) {
     $valid = false;
 }
 $model['valid'] = $valid;
+
+function isPseudoValid($model) {
+    return $model["form"] === 1 && is_null($model["email"]);
+}
+
+
 ?>
 <!DOCTYPE html>
 <!--
@@ -93,41 +96,31 @@ ref: https://zestedesavoir.com/tutoriels/295/les-filtres-en-php/
                 content: ' : ';
             }
             .error {
-                font-size: 0.8em;
+                font-family: courier, courier new, serif;
                 color: red;
-                padding: 0.5em;
-                border-radius: 0.3em;
+                font-weight: bold;
+                font-style: italic;
             }
         </style>
     </head>
     <body>
         <div id="response" class="debug">
-            <?php
-            echo "_GET<br>";
-            var_dump($_GET);
-            if (isset($result)) {
-                echo "result<br>";
-                var_dump($result);
-            }
-            echo "model<br>";
-            var_dump($model);
-            ?>
+<?php
+var_dump($model);
+?>
         </div>
         <div id="conteneur1" class="form">
             <h3>form 1</h3>
             <form id="form1" method="GET" action="filter_input.php">
+                <div class="error">
+                    <p>
+                        <span id="error_pseudo">pseudo doit contenir minimum 3 caractères</span> <br>
+                        <span id="error_email">email doit être une adresse email valide</span>
+                    </p>
+                </div>
                 <div>
                     <label id="pseudo">pseudo</label>
-                    <?php 
-                    $value = "";
-                    if ($form === 1 && ! is_null($model['pseudo'])) { 
-                        $value = $model['pseudo'];
-                    }
-                    ?>
-                    <input type="text" id="pseudo" name="pseudo" value="<?php echo $value ?>" required autofocus />
-                    <?php if ($form === 1 && is_null($model['pseudo'])) { ?>
-                        <span id="err_pseudo" class="error">Veuillez indiquer votre pseudo</span>
-                    <?php } ?>
+                    <input type="text" id="pseudo" name="pseudo" minlength="3" maxlength="8" required />
                 </div>
                 <div>
                     <label id="email">email</label>
