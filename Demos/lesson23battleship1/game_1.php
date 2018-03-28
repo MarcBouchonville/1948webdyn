@@ -29,6 +29,9 @@
                 <div id="me" class="board">
 
                 </div>
+                <div>
+                    <h3>Statut : <span id="state">CONFIGURING</span></h3>
+                </div>
             </main>
         </div>
         <script src="javascript/board.js" type="text/javascript"></script>

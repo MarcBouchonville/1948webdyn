@@ -1,16 +1,22 @@
 body {
     margin:0; 
-    padding:10px 40px; 
+    padding: 20px 40px; 
     outline: 1px solid #333;
     background:#ccc;
 }
 
 .container {
+    padding: 10px 0;
     background:#001f3f;    
     width: 600px;
 }
 
 h1 {
+    color: wheat;
+    text-align: center;
+}
+
+h3 {
     color: wheat;
     text-align: center;
 }
