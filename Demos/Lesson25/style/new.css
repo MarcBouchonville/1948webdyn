@@ -21,21 +21,44 @@ h3 {
     text-align: center;
 }
 
-.ships, .board {
+.ships {
+    display: none;
+    /*display: flex;
+    flex-direction: column;
+    margin: 20px 0px;*/
+}
+.board {
     display: flex;
     flex-direction: column;
     margin: 20px 0px;
 }
 
-.ships>div, .board>div {
+.board>div {
+    
     margin: 0 auto;
     display: flex;
     flex-direction: row;
 }
 
-.ships>div>div, .board>div>div {
+.board>div>div {
     width: 25px;
     height: 25px;
     border: 1px solid gray;
     background-color: #39CCCC;
+}
+
+.ships>div {
+    display: none;
+    /*
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;*/
+}
+
+.ships>div>div {
+    display: none;
+    /*width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: #39CCCC;*/
 }
