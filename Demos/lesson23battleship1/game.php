@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Battle Ship</title>
-        <link href="style/style.css" rel="stylesheet" type="text/css"/>
+        <link href="style/new.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <h1>Battle Ship</h1>
