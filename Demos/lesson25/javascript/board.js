@@ -6,14 +6,25 @@
  * J'ai écrit une fonction par tâche, c'est une bonne pratique car cela rend le code plus testable et maintenable
  */
 
-initGame(10);   // initialise le jeu pour une taille de 10
+const GAME_STATE_CONFIGURING = 1;
+const GAME_STATE_PLAYING = 2;
+const GAME_STATE_DONE = 3;
+var state = GAME_STATE_CONFIGURING;
+
+const CELL_BOAT_ME_HEALTHY = 'white';
+const CELL_BOAT_OTHER_HEALTHY = 'lightgrey';    // '#39CCCC';
+const CELL_BOAT_SUNK = 'red';
+const CELL_BOMB_WATER = 'black';
+
+var size = 5;
+
+initGame();   // initialise le jeu pour une taille de 10
 
 /**
  * Initialise le jeu (effectue toutes les opérations nécessaires au démarrage du jeu
- * @param {integer} size : nombre de cellules par ligne et par colonne
  * @param {type} board : type de tableau, peut prendre les valeurs ['me','other'], sert à identifier le <div> container
  */
-function initGame(size) {
+function initGame() {
     insertBoard(size, 'other');
     insertBoard(size, 'me');
     initCellsOnClick();
@@ -27,8 +38,8 @@ function initGame(size) {
  */
 function insertBoard(size, board) {
     var boardElement = document.getElementById(board);
-    if(boardElement) {      // si boardElement n'est pas trouvé, document.getElementById retourne 'null'
-        boardElement.innerHTML = createBoard(size, board)
+    if (boardElement) {      // si boardElement n'est pas trouvé, document.getElementById retourne 'null'
+        boardElement.innerHTML = createBoard(size, board);
         return true;
     } else {
         return false;
@@ -43,7 +54,7 @@ function insertBoard(size, board) {
  */
 function createBoard(size, board) {
     var boardHtml = "";
-    for(var x=0; x<size; x++) {
+    for (var x = 0; x < size; x++) {
         boardHtml += createBoardLine(x, size, board);
     }
     return boardHtml;
@@ -58,7 +69,7 @@ function createBoard(size, board) {
  */
 function createBoardLine(x, size, board) {
     var boardLineHtml = "<div>";
-    for(var y=0; y<size; y++) {
+    for (var y = 0; y < size; y++) {
         boardLineHtml += createCell(x, y, board);
     }
     boardLineHtml += "</div>";
@@ -81,10 +92,10 @@ function createCell(x, y, board) {
  * @returns {integer} la longueur de la liste des cellules
  */
 function initCellsOnClick() {
-    var cellList = document.querySelectorAll('[data-x]');    // sélectionne toutes les cellules ayant un attribut "data-x"
-    for(var i=0; i<cellList.length; i++) {                  // pour chaque cellule de la liste cellList
+    var cellList = document.getElementsByClassName('cell');    // sélectionne toutes les cellules de la class "cell"
+    for (var i = 0; i < cellList.length; i++) {                  // pour chaque cellule de la liste cellList
         cellList[i].addEventListener('click', clickCell);   // ajoute le event lister 'clickCell' à l'événement 'click'
-                                                            // => si on clique sur la cellule, le code de la function 'clickCell' sera exécuté
+        // => si on clique sur la cellule, le code de la function 'clickCell' sera exécuté
     }
     return cellList.length;
 }
@@ -95,7 +106,29 @@ function initCellsOnClick() {
  * @returns {nothing} : pas de valeur de retour
  */
 function clickCell(ev) {
-    showCell(ev.target);
+    var cellElement = ev.target;
+    logCell(cellElement);
+    switch (state) {
+        case GAME_STATE_CONFIGURING:
+            if (getBoard(cellElement) === "me") {    // si clique dans 'me'
+                createBoat(cellElement);            // crée un bateau
+            } else {                                // si clique dans 'other'
+                state = GAME_STATE_PLAYING;         // change l'état du jeu
+                createOtherBoats();                 // crée les bateaux dans 'other'
+                fire(cellElement);                  // tire sur la cellule
+            }
+            break;
+        case GAME_STATE_PLAYING:
+            fire(cellElement);
+            otherFire();
+            if (isDone() !== null)
+                state = GAME_STATE_DONE;
+            break;
+        case GAME_STATE_DONE:
+            break;
+        default:
+            console.log("ERROR, état inattendu: " + state)
+    }
 }
 
 /**
@@ -103,10 +136,102 @@ function clickCell(ev) {
  * @param {type} cellElement : référence sur une cellule
  * @returns {nothing} 
  */
-function showCell(cellElement) {
-    console.log(cellElement.getAttribute("data-x"),
-                cellElement.getAttribute("data-y"),
-                cellElement.getAttribute("data-boat"),
-                cellElement.getAttribute("data-board"));
+function logCell(cellElement) {
+    console.log(getX(cellElement),
+            getY(cellElement),
+            isBoat(cellElement),
+            getBoard(cellElement));
 }
 
+function getCellElement(x, y, board) {
+    return document.querySelector('[data-x="' + x + '"][data-y="' + y + '"][data-board=' + board + ']');
+}
+
+function getX(cellElement) {
+    return cellElement.getAttribute("data-x");
+}
+
+function getY(cellElement) {
+    return cellElement.getAttribute("data-y");
+}
+
+function isBoat(cellElement) {
+    return cellElement.getAttribute("data-boat") === "true";
+}
+
+function getBoard(cellElement) {
+    return cellElement.getAttribute("data-board");
+}
+
+function createBoat(cellElement) {
+    cellElement.setAttribute('data-boat', true);
+    var board = getBoard(cellElement);
+    if (board === 'me') {
+        cellElement.style.backgroundColor = CELL_BOAT_ME_HEALTHY;
+    } else {
+        cellElement.style.backgroundColor = CELL_BOAT_OTHER_HEALTHY;
+    }
+    return cellElement;     // bonne pratique
+}
+
+/**
+ * tire sur une cellule
+ * @param {type} cellElement
+ * @returns {undefined}
+ */
+function fire(cellElement) {
+    if (isBoat(cellElement)) {  // s'il y a un bateau sur la cellule
+        cellElement.style.backgroundColor = CELL_BOAT_SUNK; // il est coulé
+    } else {                    // s'il n'y a pas de bateau
+        cellElement.style.backgroundColor = CELL_BOMB_WATER;    // à l'eau
+    }
+}
+
+/**
+ * crée les bateaux dans la tableau 'other'
+ * par copie du tableau 'me'
+ * @returns {undefined}
+ */
+function createOtherBoats() {
+    var meBoatList = document.querySelectorAll('[data-boat=true]');     // sélectionne tous les bateaux de 'me'
+    for (var i = 0; i < meBoatList.length; i++) {    // boucle sur tous les bateaux
+        var meBoat = meBoatList[i];     // référence sur la cellule du bateau de me
+        var x = getX(meBoat);           // position X du bateau de me
+        var y = getY(meBoat);           // position Y du bateau de me
+        var otherBoat = getCellElement(x, y, 'other');  // référence sur la cellule correspondante de other
+        createBoat(otherBoat);          // création du bateau dans other
+    }
+}
+
+/**
+ * 
+ * @returns {success} null : pas de gagant, me : moi, other : le PC
+ */
+function isDone() {
+    if (isAllBoatsSunk('other'))
+        return 'me';    // retourne 'me' si tous les bateaux de other sont coulés
+    if (isAllBoatsSunk('me'))
+        return 'other';    // retourne 'other' si tous les bateaux me sont coulés
+    return null;    // personne n'a gagné
+}
+
+function isAllBoatsSunk(board) {
+    var otherShips = document.querySelectorAll('[data-boat=true][data-board=' + board + ']');   // sélectionne tous les bateaux de other
+    for (var i = 0; i < otherShips.length; i++) {      // boucle sur tous les bateaux de other
+        if (!isBoatSunk(otherShips[i]))
+            return false;  // chaque bateau doit avoir la couleur rouge
+    }
+    return true;
+}
+
+function isBoatSunk(cellElement) {
+    return cellElement.style.backgroundColor === CELL_BOAT_SUNK;     // le bateau est coulé si cellule est rouge
+}
+
+
+function otherFire() {
+    var x = Math.floor(Math.random() * size);
+    var y = Math.floor(Math.random() * size);
+    var cell = getCellElement(x, y, 'me');
+    fire(cell);
+}

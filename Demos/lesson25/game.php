@@ -9,7 +9,7 @@
         <div class="container">
             <h1>Battle Ship</h1>
             <main>
-                <div id="ships" class="ships">
+                <div id="ships" class="ships" style="display: none">
                     <div>
                         <div></div><div></div><div></div><div></div>
                     </div>
