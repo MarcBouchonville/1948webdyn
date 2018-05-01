@@ -134,14 +134,14 @@ function clickCell(ev) {
             }
             break;
         case GAME_STATE_DONE:
-            if (isDone() == "me") {
+            if (isDone() === "me") {
                 document.getElementById("state").innerText = "YOU WIN !";
             } else {
                 document.getElementById("state").innerText = "YOU LOST !";
             }
             break;
         default:
-            console.log("ERROR, état inattendu: " + state)
+            console.log("ERROR, état inattendu: " + state);
     }
 }
 
@@ -209,11 +209,20 @@ function fire(cellElement) {
 function createOtherBoats() {
     var meBoatList = document.querySelectorAll('[data-boat=true]');     // sélectionne tous les bateaux de 'me'
     for (var i = 0; i < meBoatList.length; i++) {    // boucle sur tous les bateaux
-        var meBoat = meBoatList[i];     // référence sur la cellule du bateau de me
-        var x = getX(meBoat);           // position X du bateau de me
-        var y = getY(meBoat);           // position Y du bateau de me
+        //var meBoat = meBoatList[i];     // référence sur la cellule du bateau de me
+        var x = getX(Math.floor(Math.random() * size));
+        var y = getY(Math.floor(Math.random() * size));
+/*        var x = getX(meBoat);           // position X du bateau de me
+        var y = getY(meBoat);           // position Y du bateau de me */
         var otherBoat = getCellElement(x, y, 'other');  // référence sur la cellule correspondante de other
-        createBoat(otherBoat);          // création du bateau dans other
+        // var existBoat = isBoat(otherBoat);
+        var existBoat = document.getElementById('other').querySelector('[data-x=' + x + '][data-y=' + y + '][data-board=other]');
+        
+        if (isBoat(existBoat)) {
+            i = i - 1;                    // si un bateau existe deja alors on décompte le compteur en cours
+        } else {
+            createBoat(otherBoat);          // création du bateau dans other
+        }
     }
 }
 

@@ -35,7 +35,7 @@ and open the template in the editor.
 
                 </div>
                 <div>
-                    <h3>Statut : <span id="state">CONFIGURING</span></h3>
+                    <h3>Statut : <span id="state"></span></h3>
                 </div>
             </main>
         </div>
