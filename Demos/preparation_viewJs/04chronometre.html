@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test vue.js</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div id="tuto" class="text-center">
+          <h1>Le chronomètre</h1>
+        <hr>
+        <h1>
+          <span class="label label-primary">{{ time.minutes }}</span> minutes
+          <span class="label label-primary">{{ time.secondes }}</span> secondes
+        </h1>
+        <br>
+        <p>
+          <button class="btn btn-danger btn-lg" v-show="etat.backward" @click="backward">Effacer</button>
+          <button class="btn btn-danger btn-lg" v-show="etat.stop" @click="stop">Arrêter</button>
+          <button class="btn btn-primary btn-lg" v-show="etat.play" @click="play">{{ btnPlay }}</button>
+        </p>
+      </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+
+    <script>
+
+      var vm = new Vue({
+        el: '#tuto',
+        data: {
+          time: {
+            minutes: 0,
+            secondes: 0
+          },
+          btnPlay: 'Démarrer',
+          etat: {
+            stop: false,
+            backward: false,
+            play: true
+          }
+        },
+        methods: {
+          backward: function() {
+            chronoReset();
+          },
+          play: function() {
+            chronoStart();            
+          },
+          stop: function() {
+            chronoStop();
+          }
+        }
+      });
+
+      var totalSecondes = 0;
+      var timer;
+
+      chronoStart = function() {
+        timer = setInterval(function() {
+          vm.time.minutes = Math.floor(++totalSecondes / 60);
+          vm.time.secondes = totalSecondes - vm.time.minutes * 60;
+        }, 1000);
+        setEtat(false, true, false);
+        vm.btnPlay = 'Continuer';
+      };
+
+      chronoStop = function() {
+        clearInterval(timer);
+        setEtat(true, false, true);
+      };
+
+      chronoReset = function() {
+        totalSecondes = 0;
+        vm.time.minutes = 0;
+        vm.time.secondes = 0;
+        setEtat(true, false, false);
+        vm.btnPlay = 'Démarrer';        
+      }
+
+      setEtat = function(play, stop, backward) {
+        vm.etat.play = play;
+        vm.etat.stop = stop;
+        vm.etat.backward = backward;        
+      };
+
+    </script>
+
+  </body>
+
+</html>

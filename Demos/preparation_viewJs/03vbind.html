@@ -9,18 +9,16 @@ https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
-
     </head>
     <body>
         <header>
             <h1>Vue.js Binding</h1>
         </header>
         <main class='container'>
-            <div id='vue-section' class="text-center">
+            <div id='vue-section' class='text-center'>
                 <h1>
                     <span v-bind:class='type' @mouseover='changeType'>
-                        {{type}}
+                        {{ type }}
                     </span>
                 </h1>
             </div>
@@ -37,7 +35,7 @@ https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/
                 },
                 methods: {
                     changeType: function() {
-                        this.type = (this.type === 'label-primary') ?
+                        vm.type = (vm.type === 'label-primary') ?
                             'label-success' : 'label-primary';
                     }
                 }

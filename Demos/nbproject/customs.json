@@ -7,6 +7,7 @@
         },
         "v-text": {
             "context": "p"
-        }
+        },
+        "v-show": {}
     }
 }
