@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+Vue.js on boarding - injection du modèle dans la vue
+https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/?page=on-se-lance
+
+-->
+<html>
+    <head>
+        <title>Vue.js OnBoarding</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Vue.js OnBoarding</h1>
+        </header>
+        <main>
+            <div id="container">
+                <div id="tuto">
+                    <p>{{texte}}</p>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <p>Vue.js on boarding, EPFC, pages web dynamiques, présent depuis 
+                <span>{{hour}}-{{minute}}-{{seconde}}</span>
+            </p>
+        </footer>
+        <script>
+            var vm = new Vue({
+                el: '#container',
+                data: {
+                    texte: 'Hello vue.js'
+                }
+            });
+            var count = 1;
+            setInterval(function() {
+                vm.texte = vm.texte + (count++%10);
+            }, 2000);
+            var vfooter = new Vue({
+                el: '#footer',
+                data: {
+                    hour: 0,
+                    minute: 0,
+                    seconde: 0
+                }
+            });
+            var count = 1;
+            var nSecondes = 0;
+            setInterval(function() {
+                nSecondes++;
+                var hour = Math.floor(nSecondes / 3600);
+                var minute = Math.floor( (nSecondes - hour*60) / 60);
+                var seconde = nSecondes - hour * 3600 - minute * 60;
+                vfooter.hour = hour;
+                vfooter.minute = minute;
+                vfooter.seconde = seconde;
+            }, 1000);
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+Vue.js : la vue envoie des commandes avec v-on
+https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/?page=action
+-->
+<html>
+    <head>
+        <title>Vue.js Commandes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Vue.js Commandes</h1>
+        </header>
+        <main>
+            <div id='container'>
+                <p><a v-on:click='action'>Cliquez ici</a></p>
+                <p>{{texte}}</p>             
+            </div>
+        </main>
+        <footer>
+            <p>Vue.js commande - EPFC</p>
+        </footer>
+        <script>
+            var vm = new Vue({
+                el: '#container',
+                data: {
+                    texte: "hello"
+                },
+                methods: {
+                    action: function() {
+                        vm.texte += " - Clique";
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
