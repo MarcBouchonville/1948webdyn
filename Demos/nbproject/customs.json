@@ -1,1 +1,8 @@
-{"elements":{},"attributes":{"@click":{}}}
+{
+    "elements": {},
+    "attributes": {
+        "@click": {},
+        "v-for((line,y)": {},
+        "v-for": {}
+    }
+}
