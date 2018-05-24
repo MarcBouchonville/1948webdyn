@@ -40,3 +40,15 @@ h3 {
     background-color: #39CCCC;
 }
 
+.boat-none, .boat-invisible {
+    background-color: #39CCCC;
+}
+
+.boat-visible {
+    background-color: #FFFFFF;
+}
+
+.boat-sunk {
+    background-color: yellow;
+}
+

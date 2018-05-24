@@ -25,38 +25,59 @@
         </main>
         <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
         <script>
-            const BOAT_NONE = 'NONE';
-            const BOAT_HEALTY = 'HEALTHY';
+            const BOAT_NONE = "boat-none";
+            const BOAT_VISIBLE = "boat-visible";
+            const BOAT_UNVISIBLE = "boat-unvisible";
+            const BOAT_SUNK = "boat-sunk";
+            
+            const GAME_CONFIGURING = "CONFIGURING";
+            const GAME_PLAYING = "PLAYING";
+            const GAME_DONE = "DONE";
+
+            var gameState = GAME_CONFIGURING;
+            
+            var size = 5;
+
+            function generateMatrice(size, boatState) {
+                return new Array(size).fill(new Array.size(boatState));
+            };
             
             var vm = new Vue({
                 el: '#grids',
                 data: {
-                    other: [],
-                    me: []
+                    other: generateMatrice(size, BOAT_NONE),
+                    me: generateMatrice(size, BOAT_NONE)
                 },
                 methods: {
-                    addBoat: function(lIndex, cIndex) {
-                        console.log("Add boad on line: " + lIndex + " - cell: " + cIndex);
-                        this.me[lIndex][cIndex] = {boat: BOAT_HEALTY}; 
+                    addBoat: function (lIndex, cIndex) {
+                        if (gameState === GAME_CONFIGURING) {
+                            console.log("Add boad on line: " + lIndex + " - cell: " + cIndex);
+                            this.me[lIndex][cIndex] = {
+                                BOAT_VISIBLE,
+                            };
+                        }
                     },
-                    fire: function(lIndex, cIndex) {
-                        
+                    fire: function (lIndex, cIndex) {
+                        switch(gameState) {
+                            case GAME_CONFIGURING:
+                                gameState = GAME_PLAYING;
+                                this._fireOther(lIndex, cIndex);
+                        }
+                    },
+                    _fireOther: function(lIndex, cIndex) {
+                        var cell = this.other[lIndex][cIndex];
+                        if(cell.boat === BOAT_UNVISIBLE) {
+                            cell = BOAT_SUNK;
+                        }
+                    },
+                    _hasLost: function(grid) {
+                        var lost = true;
+                        for(var l=0; l<grid.length; l++) {
+                            
+                        }
                     }
                 }
             });
-            function init(size) {
-                for(var i=0; i<size; i++) {
-                    var otherLine = [];
-                    var meLine = [];
-                    for(var j=0; j<size; j++) {
-                        otherLine.push({boat: BOAT_NONE});
-                        meLine.push({boat: BOAT_NONE});
-                    }
-                    vm.other.push(otherLine);
-                    vm.me.push(meLine);
-                }
-            } 
-            init(4);
         </script>
     </body>
 </html>

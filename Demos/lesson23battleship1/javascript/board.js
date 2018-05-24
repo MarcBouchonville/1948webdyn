@@ -139,7 +139,7 @@ function pcFire() {
 }
 
 /**
- * Crée le board 'other (essentiellement crée les bateaux dans le board 'other')
+ * Crée le board 'other' (essentiellement crée les bateaux dans le board 'other')
  * @param {type} nrShips
  * @returns {undefined}
  */
