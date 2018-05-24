@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/?page=on-se-repete-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test vue.js</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <table class="table table-bordered">
+                <caption>Personnes</caption>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                    </tr>
+                </thead>
+                <tbody id="tuto">
+                    <tr v-for="personne in personnes">
+                        <td>{{ personne.nom }}</td>
+                        <td>{{ personne.prenom }}</td>   
+                    </tr>  
+                </tbody>     
+            </table>
+
+        </div>
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+        <script>
+new Vue({
+  el: '#tuto',
+  data: {
+    personnes: [
+      {nom: "Durand", prenom: "Jacques"},
+      {nom: "Dupont", prenom: "Albert"},
+      {nom: "Martin", prenom: "Denis"},
+    ]
+  }
+});
+        </script>
+    </body>
+</html>

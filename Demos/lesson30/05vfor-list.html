@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/?page=on-se-repete-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test vue.js</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <ul id="tuto">
+                <li v-for="(value, index) in fruits"  @click="getFruit(index)">
+                    {{ index }} => {{ value }}
+                </li>
+            </ul>
+        </div>
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+        <script>
+new Vue({
+  el: '#tuto',
+  data: {
+    fruits: [
+      'pomme',
+      'cerise',
+      'abricot'
+    ]
+  },
+  methods: {
+    getFruit: function(index) {
+      alert('Je suis ' + this.fruits[index]);
+    }
+  }
+});
+        </script>
+
+    </body>
+</html>

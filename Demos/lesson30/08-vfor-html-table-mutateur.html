@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/?page=on-se-repete-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test vue.js</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <table class="table table-bordered">
+                <caption>Personnes</caption>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                    </tr>
+                </thead>
+                <tbody id="tuto">
+                    <tr v-for="personne in personnes">
+                        <td>{{ personne.nom }}</td>
+                        <td>{{ personne.prenom }}</td>   
+                    </tr>  
+                </tbody>       
+            </table>
+
+        </div>
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+        <script>
+var vm = new Vue({
+    el: '#tuto',
+    data: {
+        personnes: [
+            {nom: "Durand", prenom: "Jacques"},
+            {nom: "Dupont", prenom: "Albert"},
+            {nom: "Martin", prenom: "Denis"},
+        ]
+    }
+});
+
+// ajoute Claret en fin de liste
+setTimeout(function () {
+    vm.personnes.push({nom: "Claret", prenom: "Marcel"});
+}, 2000);
+
+// supprime Claret
+setTimeout(function () {
+    vm.personnes.pop();
+}, 4000);
+
+// ajoute Claret en début de liste
+setTimeout(function () {
+    vm.personnes.unshift({nom: "Claret", prenom: "Marcel"});
+}, 6000);
+
+// supprime Claret (du début de la liste)
+setTimeout(function () {
+    vm.personnes.shift();
+}, 8000);
+
+// remplace la première ligne par Claret
+// splice est une fonction très versatible
+setTimeout(function () {
+    vm.personnes.splice(1, 1, {nom: "Claret", prenom: "Marcel"});
+}, 10000);
+
+// ordonne alphabétiquement la liste
+setTimeout(function () {
+    vm.personnes.sort(function (a, b) {
+        return (a.nom > b.nom);
+    });
+}, 12000);
+
+// inverse l'ordre de la liste
+setTimeout(function () {
+    vm.personnes.reverse();
+}, 14000);
+
+
+        </script>
+
+    </body>
+</html>

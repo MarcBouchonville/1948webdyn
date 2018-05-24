@@ -36,7 +36,7 @@ https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/
             });
             var count = 1;
             setInterval(function() {
-                vm.texte = vm.texte + (count++%10);
+                vm.texte = vm.texte + ((count++)%10);
             }, 2000);
             var vfooter = new Vue({
                 el: '#footer',
