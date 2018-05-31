@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+https://moodle.epfc.eu/mod/page/view.php?id=26593
+exercice
+-->
+<html>
+    <head>
+        <title>Exercice Click</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1>Exercice click count avec Vue.js</h1>
+        </header>
+        <div>
+        </div>
+        <footer id='footer' @click='doAction'>{{ nrClick }}</footer>
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+        <script>
+            var vm = new Vue({
+                el: 'footer',
+                data: {
+                    nrClick: 0
+                },
+                methods: {
+                    doAction: function() {
+                        vm.nrClick++;
+                    }
+                }
+            });
+            
+        </script>
+    </body>
+</html>

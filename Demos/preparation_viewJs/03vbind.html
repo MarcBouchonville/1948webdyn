@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+Vue.js : binding de propriétés
+https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/?page=action
+-->
+<html>
+    <head>
+        <title>Vue.js Binding</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+
+    </head>
+    <body>
+        <header>
+            <h1>Vue.js Binding</h1>
+        </header>
+        <main class='container'>
+            <div id='vue-section' class="text-center">
+                <h1>
+                    <span v-bind:class='type' @mouseover='changeType'>
+                        {{type}}
+                    </span>
+                </h1>
+            </div>
+        </main>
+        <footer>
+            <p>Vue.js binding - EPFC</p>
+        </footer>
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+        <script>
+            var vm = new Vue({
+                el: '#vue-section',
+                data: {
+                    type: 'label-primary'
+                },
+                methods: {
+                    changeType: function() {
+                        this.type = (this.type === 'label-primary') ?
+                            'label-success' : 'label-primary';
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
