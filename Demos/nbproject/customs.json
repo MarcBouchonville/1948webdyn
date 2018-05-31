@@ -1,7 +1,13 @@
 {
     "elements": {},
     "attributes": {
+        "v-von:click": {
+            "context": "div"
+        },
         "@click": {},
+        "v-on:click": {
+            "context": "div"
+        },
         "v-for((line,y)": {},
         "v-for": {}
     }

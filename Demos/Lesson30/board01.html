@@ -12,22 +12,22 @@ and open the template in the editor.
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
 
     </head>
     <body>
-        <div id="container"> 
-            <div id="other">
+        <div id="container" class="container"> 
+            <div id="other" class="board">
                 <div v-for="(line,y) in other">
                     <div v-for="(cell, x) in line">
-                        V
+                        {{ cell[5] }}
                     </div>
                 </div>
             </div>
-            <div id="me">
-                <div v-for="(line,y) in me">
-                    <div v-for="(cell, x) in line">
-                        V
+            <div id="me" class="board">
+                <div v-for="(line, y) in me">
+                    <div v-for="(cell, x) in line" v-on:click="doAction(x,y)">
+                        {{ cell[5] }}
                     </div>
                 </div>
             </div>
@@ -43,13 +43,25 @@ and open the template in the editor.
             var vm = new Vue({
                 el: '#container',
                 data: {
-                    other: undefined,
-                    me: undefined
+                    monTexte: 'V',
+                    other: new Array(4).fill(new Array(4).fill(BOAT_NONE)),
+                    me: new Array(4).fill(new Array(4).fill(BOAT_NONE))
+                },
+                methods: {
+                    doAction: function(x,y) {
+                        console.log("doAction",x,y);
+                        newLine = [];
+                        for(var i=0; i<this.me[y].length; i++) {
+                            newLine.push( this.me[y][i]);
+                        }
+                        newLine[x] = BOAT_VISIBLE;
+                        Vue.set(this.me,y,newLine);
+                        console.log(this.me[x][y]);
+                        // this.me[y,x] = BOAT_VISIBLE;
+                        // this.update(); ??
+                    }
                 }
             });
-            vm.other = new Array(4).fill(new Array(4).fill(BOAT_NONE));
-            vm.me = new Array(4).fill(new Array(4).fill(BOAT_NONE));
-            
             
             
         </script>
