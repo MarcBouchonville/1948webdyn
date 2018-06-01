@@ -17,7 +17,7 @@
             </div>
             <div id="me" class="board">
                 <div v-for="(line, lIndex) in me">
-                    <div v-for="(cell, cIndex) in line" class="cell" @click="addBoat(this, lIndex, cIndex)">
+                    <div v-for="(cell, cIndex) in line" class="cell" @click="addBoat(lIndex, cIndex)">
                         <span v-bind:class="other[lIndex][cIndex].boat"></span>                        
                     </div>
                 </div>
@@ -52,9 +52,9 @@
                     addBoat: function (lIndex, cIndex) {
                         if (gameState === GAME_CONFIGURING) {
                             console.log("Add boad on line: " + lIndex + " - cell: " + cIndex);
-                            this.me[lIndex][cIndex] = {
-                                BOAT_VISIBLE,
-                            };
+                            // does not work this.me[lIndex][cIndex] = BOAT_VISIBLE;
+                            var newLine;// to do copy
+                            Vue.set(me, lIndex, newLine);
                         }
                     },
                     fire: function (lIndex, cIndex) {
