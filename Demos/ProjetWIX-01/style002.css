@@ -1,0 +1,37 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03-juin-2018, 18:33:49
+    Author     : Utilisateur
+*/
+
+    .accordion {
+        background-color: aliceblue;
+        color: #444;
+        cursor: pointer;
+        padding: 5px;
+        max-width: 20%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 22px;
+        transition: 0.4s;
+    }
+    
+    .active, .accordion:hover {
+        background-color: greenyellow; 
+    }
+    
+    .panel {
+        padding: 0 10px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+    }
+
+    ul li {
+	font-size: 22px;
+    }
