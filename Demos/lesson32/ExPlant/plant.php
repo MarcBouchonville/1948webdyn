@@ -1,7 +1,4 @@
-<?php ?>
 <!DOCTYPE html>
-<!--
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -28,8 +25,10 @@
                     <hr>
                 </header>
                 <main>
+                    <!-- sous vue.js -->
                     <div id='plant_manager'>
                         <div id='search'>
+                            <!-- cet input invoque la fonction search (sans tag form !)-->
                             <input 
                                 type='text' 
                                 name='familar-name' 
@@ -84,20 +83,37 @@
                         }]
                 }
             });
+            /**
+             * AJAX pattern
+             * demande au serveur de retourner les plantes dont le nom 
+             * correspond au filtre
+             * @param {type} filter
+             * @returns {plantes}
+             */
             function search(filter) {
                 var xhttp = new XMLHttpRequest();
+                // definition de la callback qui est appelée quand 
+                // xhttp change (et donc quand la réponse arrive)
                 xhttp.onreadystatechange = function () {
+                    // réponse correcte
                     if (this.readyState === 4 && this.status === 200) {
+                        // cache le fait qu'on a perdu la connection
                         document.getElementById('connection-lost').style.display = 'hide';
+                        // récupère les données
                         var plants = JSON.parse(this.responseText);
+                        // efface la vue.js liste
                         vm.plants.splice(0);
+                        // mets la réponse dans la vue.js liste
                         for (var i = 0; i < plants.length; i++) {
                             Vue.set(vm.plants, i, plants[i]);
                         }
-                    } else if (this.readyState === 4) {
-                        document.getElementById('c').style.display = 'block';
+                    }
+                    // si le serveur retourne une erreur
+                    else if (this.readyState === 4) {
+                        // affiche l'erreur
+                        document.getElementById('connection-lost').style.display = 'block';
                     } else {
-                        console.log(this.readyState, this.status)
+                        // ne nous intéresse pas
                     }
                 };
                 xhttp.open("GET", "api/plants.php?filter=" + filter, true);
