@@ -9,7 +9,8 @@ https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
-        <div class="container">
+        <div id="tuto" class="container">
+            <button v-on:click="change">Greet</button>
             <table class="table table-bordered">
                 <caption>Personnes</caption>
                 <thead>
@@ -18,31 +19,38 @@ https://maurice-chavelli.developpez.com/tutoriels/javascript/les-bases-vue-js-2/
                         <th>Prénom</th>
                     </tr>
                 </thead>
-                <tbody id="tuto">
+                <tbody>
                     <tr v-for="personne in personnes">
                         <td>{{ personne.nom }}</td>
                         <td>{{ personne.prenom }}</td>   
                     </tr>  
                 </tbody>     
             </table>
-
         </div>
         <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
         <script>
 var vm = new Vue({
-  el: '#tuto',
-  data: {
-    personnes: [
-      {nom: "Durand", prenom: "Jacques"},
-      {nom: "Dupont", prenom: "Albert"},
-      {nom: "Martin", prenom: "Denis"},
-    ]
-  }
+    el: '#tuto',
+    data: {
+        personnes: [
+            {nom: "Durand", prenom: "Jacques"},
+            {nom: "Dupont", prenom: "Albert"},
+            {nom: "Martin", prenom: "Denis"},
+        ]
+    },
+    methods: {
+        change: function () {
+            console.log("change");
+            Vue.set(this.personnes, 1, {nom: "Le Roi", prenom: "Philippe"});
+            //this.personnes[1] = {nom: "Le Roi", prenom: "Philippe"};
+        }
+    }
 });
 
 // vm.personnes[1] = {nom: "Claret", prenom: "Marcel"}; // ne fonctionne pas
 // utilisez ceci
-Vue.set(vm.personnes, 1, {nom: "Claret", prenom: "Marcel"});
+// Vue.set(vm.personnes, 1, {nom: "Claret", prenom: "Marcel"});
+
 
         </script>
     </body>
