@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+        <script type="text/javascript">
+            function couleur(parametre_couleur){
+                document.getElementById('dv').style.backgroundColor=parametre_couleur;
+            }
+	</script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+	<div id="premier">
+		<button onclick='couleur("blue")'>bleu</button>
+
+		<button onclick='couleur("green")'>vert</button>
+
+		<button onclick='couleur("red")'>rouge</button>
+	</div>
+	<br><br>
+
+	<div id='dv' style='height:50px;width:50px;background-color:black'></div>
+
+	<div id="footer">
+		<h1 @click="doAction">Nr de clics : {{ nrClick }}</h1>
+	</div>
+
+
+    <script>
+	
+	var vm = new Vue({
+		el: '#footer',
+		data: {
+			nrClick: 0
+		},
+		methods: {
+			doAction: function() {
+				vm.nrClick++;
+			}
+		}
+	});
+    </script>
+    </body>
+</html>
