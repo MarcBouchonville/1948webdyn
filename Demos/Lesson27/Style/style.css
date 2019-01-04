@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 01-mai-2018, 14:34:12
+    Author     : MarcB-PC
+*/
+body {
+    margin:0; 
+    padding: 20px 40px; 
+    outline: 1px solid #333;
+    background:#ccc;
+}
+
+.container {
+    padding: 10px 0;
+    background:#001f3f;    
+    width: 600px;
+}
+
+h1 {
+    color: wheat;
+    text-align: center;
+}
+
+h3 {
+    color: wheat;
+    text-align: center;
+}
+
+.ships, .board {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+
+.ships>div, .board>div {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.ships>div>div, .board>div>div {
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    background-color: #39CCCC;
+}

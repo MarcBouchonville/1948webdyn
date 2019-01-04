@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body>
+        <div id="container" class="container"> 
+            <div id="other" class="board">
+                <div v-for="(line,y) in other">
+                    <div v-for="(cell, x) in line">
+                        {{ cell[5] }}
+                    </div>
+                </div>
+            </div>
+            <div id="me" class="board">
+                <div v-for="(line, y) in me">
+                    <div v-for="(cell, x) in line" v-on:click="doAction(x,y)">
+                        {{ cell[5] }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // 1) creation du tableau
+            
+            const BOAT_NONE = 'boat-none';
+            const BOAT_VISIBLE = 'boat-visible';
+            const BOAT_UNVISIBLE = 'boat-unvisible';
+            const BOAT_SUNK = 'boat-sunk';
+            
+            var vm = new Vue({
+                el: '#container',
+                data: {
+                    monTexte: 'V',
+                    other: new Array(4).fill(new Array(4).fill(BOAT_NONE)),
+                    me: new Array(4).fill(new Array(4).fill(BOAT_NONE))
+                },
+                methods: {
+                    doAction: function(x,y) {
+                        console.log("doAction",x,y);
+                        newLine = [];
+                        for(var i=0; i<this.me[y].length; i++) {
+                            newLine.push( this.me[y][i]);
+                        }
+                        newLine[x] = BOAT_VISIBLE;
+                        Vue.set(this.me,y,newLine);
+                        console.log(this.me[x][y]);
+                        // this.me[y,x] = BOAT_VISIBLE;
+                        // this.update(); ??
+                    }
+                }
+            });
+            
+            
+        </script>
+    </body>
+</html>

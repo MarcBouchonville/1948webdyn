@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/vue@2.0.3/dist/vue.js"></script>
+    </head>
+    <body>
+        <h1>Titre</h1>
+        <footer id="footer">
+            <h1>Secondes : {{ tempsSec }}</h1>
+        </footer>
+
+        <script>
+var vm = new Vue({
+    el: '#footer',
+    data: {
+        tempsSec: 0
+    },
+});
+setInterval (function(){
+    vm.tempsSec++;
+}, 1000);
+        </script>
+    </body>
+</html>

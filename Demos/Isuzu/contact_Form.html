@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style02.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+        <div class="form-style-2">
+            <h1>Contact</h1>
+            <form action="contact_controller.php" method="post">
+                <fieldset>
+					<div class="section">Message</div>
+					<div class="inner-wrap">
+						<label for="email">Email<span class="required">*</span>
+							<input type="email" class="input-field" name="email" value="" />
+						</label>
+					</div>
+                </fieldset>
+                <fieldset>
+					<div class="section">Identité</div>
+					<div class="inner-wrap">
+						<label for="prenom"><span>Prénom</span>
+							<input type="text" class="input-field" name="prenom" value="" />
+						</label>
+						<label for="nom"><span>Nom</span>
+							<input type="text" class="input-field" name="nom" value="" />
+						</label>
+					</div>
+                </fieldset>
+                <fieldset>
+					<div class="section">Contact</div>
+					<div class="inner-wrap">
+						<label for="telephone"><span>Telephone</span>
+							<input type="text" class="input-field" name="telephone" value=""/>
+						</label>
+					</div>
+                </fieldset>
+                <fieldset>
+					<div class="section">Adresse</div>
+					<div class="inner-wrap">
+						<label for="commune"><legend>Commune</legend>
+							<select name="commune" class="commune-field" size="5">
+								<option value="Anderlecht">Anderlecht</option>
+								<option value="Auderghem">Auderghem</option>
+								<option value="Berchem-Sainte-Agathe">Berchem-Sainte-Agathe</option>
+								<option value="Bruxelles">Bruxelles</option>
+								<option value="Etterbeek">Etterbeek</option>
+								<option value="Evere">Evere</option>
+								<option value="Forest">Forest</option>
+								<option value="Ganshoren">Ganshoren</option>								
+								<option value="ixelles">Ixelles</option>
+								<option value="Jette">Jette</option>
+								<option value="Koekelberg">Koekelberg</option>
+								<option value="Molenbeek-Saint-Jean">Molenbeek-Saint-Jean</option>
+								<option value="Saint-Gilles">Saint-Gilles</option>
+								<option value="Saint-Josse-Ten-Noode">Saint-Josse-Ten-Noode</option>
+								<option value="schaerbeek">Schaerbeek</option>
+								<option value="Uccle">Uccle</option>
+								<option value="Watermael-Boitsfort">Watermael-Boitsfort</option>
+								<option value="Woluwe-Saint-Lambert">Woluwe-Saint-Lambert</option>
+								<option value="Woluwe-Saint-Pierre">Woluwe-Saint-Pierre</option>
+							</select>
+						</label>
+					</div>
+                </fieldset>
+                <fieldset>
+					<div class="section">Commentaire</div>
+					<div class="inner-wrap">
+						<label for="commentaire">
+							<textarea name="commentaire" class="textarea-field"
+							onfocus="if(value=='commentaire') value='';" ></textarea>
+						</label>
+					</div>
+                </fieldset>
+				<br>
+				<div class="button-section">
+					<input type="submit" value="Envoyer" />
+					<input type="reset" value="Annuler" />
+				</div>
+            </form>
+        </div>
+    </body>
+</html>

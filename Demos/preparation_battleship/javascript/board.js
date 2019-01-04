@@ -439,5 +439,4 @@ function pcFire(board) {
     var pos = generateRandomXY(size);
     var cellElement = getCellElement(board, pos.x, pos.y);
     fire(cellElement);
-}
-
+    }

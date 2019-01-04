@@ -1,5 +1,5 @@
 <?php
-// enregistre le formulaire dans la DB
+/* enregistre le formulaire dans la DB
 
 // ouvre une connection avec mysql (voir http://php.net/manual/fr/pdo.construct.php)
 // $pdo est la variable qui permet de travailler avec la connection
@@ -11,20 +11,25 @@
 //                                   dbname=isuzu : nom de la DB (optionnel)
 //                                                charset=utf8 : les caractères sont encodés en UTF8
 //                                                               user
-//                                                                       password
+//                                                                       password  */
+/*<<<<<<< HEAD*/
 $pdo = new PDO("mysql:host=localhost;dbname=isuzu;charset=utf8", "root", "root");
+    /*=======*/
+$pdo = new PDO("mysql:host=localhost:9010;dbname=isuzu;charset=utf8", "root", "");
+/* adresse localhost mise a jour ici pour home (port 9010)
+>>>>>>> origin/master
 
-// affiche les excepté - facile pour développer
+// affiche les excepté - facile pour développer*/
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-// prepare une requête dans mysql
+/* prepare une requête dans mysql
 // $stmt est une référence sur un "statement", une instruction pour mysql
 //            prepare : ... prépare l'exécution de l'(ici) INSERT dans mysql
 //                     INSERT INTO ... : le code SQL que mysql doit exécuté
 //         (email, nom, prenom, telephone, commune, commentaire) : les noms des colonnes
 //         VALUES(?, ?, ?, ?, ?, ?) : les valeurs à insérer
 //                                    chaque point d'interrogation correspond à une colonne, dans l'ordre
-//                                    ? indique que la valeur sera fournie après (c'est pour cela que l'on parle de "prepare", l'exécution n'est pas terminée
+//                                    ? indique que la valeur sera fournie après (c'est pour cela que l'on parle de "prepare", l'exécution n'est pas terminée*/
 $stmt = $pdo->prepare("INSERT INTO clients "
         . "(email, nom, prenom, telephone, commune, commentaire)"
         . "VALUES(?, ?, ?, ?, ?, ?)");

@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03-juin-2018, 18:32:36
+    Author     : Utilisateur
+*/
+/* lignes ajoutées	*/
+
+ul .MenuBarHorizontal {
+	position: relative;
+	margin-top: 100px;
+}
+
+table {
+	display: block;
+	width: 80%;
+	border: 1px solid red;
+	margin-top: 1px;
+	all: initial;
+}
+
+header {
+	position: relative;
+	margin-bottom: 1px;
+}
+
+body {
+	background-color: aliceblue;
+}
+#menu01 {
+    background-color: #f7e8fd;
+}
+#MenuBar1 {
+    font-family: "courier";
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-width: 200px;
+}

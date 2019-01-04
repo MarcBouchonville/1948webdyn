@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ajoutEtudiant</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../CSS/style001.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+	<div class="form-style-2">
+		<div class="form-style-2-heading">
+                    <p>Provide your information</p>
+                </div>
+		<form action="../ajoutEt.php" method="get">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="input-field" name="nom" value="" required />
+                    
+                    <label for="prenom">Prénom</label>
+                    <input type="text" class="input-field" name="prenom" value="" required />
+                    
+                    <label for="datenaiss">Date de naissance</label>
+                    <input type="date" class="input-field" name="datenaiss" value="" placeholder="21-06-2018" />
+                    
+                    <label for="rue">Rue-Nr</label>
+                    <input type="text" class="input-field" name="rue" value="" placeholder="rue, nr" />
+                    
+                    <label for="cp">Code postal</label>
+                    <input type="number" class="input-field" name="cp" value="" />
+                    
+                    <label for="ville">Ville</label>
+                    <input type="text" class="input-field" name="ville" value="" />
+
+                    <label>
+                        <span>&nbsp;</span>
+                        <input type="submit" value="Submit" />
+                    </label>
+		</form>
+	</div>
+        
+    </body>
+</html>

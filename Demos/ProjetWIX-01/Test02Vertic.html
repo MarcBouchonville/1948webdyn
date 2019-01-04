@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Test 002</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Marc Bouchonville" />
+        <meta name="date" content="2018-06-03" scheme="YYYY-MM-DD" />
+        <!-- /* <meta http-equiv="expires" content="Wed, 21 Jun 2018 14:25:27 GMT" />    */ -->
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        
+        <meta name="expires" content="1 January 2020 ">
+        <link href="style001.css" rel="stylesheet" type="text/css"/>
+        <link href="style002.css" rel="stylesheet" type="text/css"/>
+
+        <link href=”favicon.ico” rel=”icon” />
+
+    </head>
+    <body>
+        <header>
+            <div id="menu01">
+                <img src="images/image001.jpg" alt="UPPLEVA" width="211" />
+                <hr>
+            </div>
+        </header>
+
+
+        <p>&nbsp;</p>
+
+        <table width="80%">
+            <tr class="menu001">
+                <td width="5%"></td>
+                <td width="30%">
+
+                    <ul id="MenuBar1">
+                        <li><a class="accordion" href="#">A propos</a>
+                            <ul>
+                                <li><a href="#">ambiances</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="accordion" href="#">Services</a>
+                            <ul>
+                                <li><a href="#">coaching déco</a></li>
+                                <li><a href="#">décoration d'intérieur</a></li>
+                                <li><a href="#">architecture d'intérieur</a></li>
+                                <li><a href="#">design d'espace professionnel</a></li>
+                                <li><a href="#">boutique</a></li>
+                                <li><a href="#">mobilier sur-mesure</a></li>
+                                <li><a href="#">accompagnement shopping...</a></li>
+                                <li><a href="#">atelier à domicile</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="accordion" href="#">Réalisations</a>
+                            <ul>
+                                <li><a href="#">un peu de chaleur</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Projets</a></li>
+                        <li><a href="#">Shopping</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+
+                </td>
+                <td width="30%">
+                    <img src="images/image002.jpg" alt="Välkommen"
+                         width="300" height="340" />
+                </td>
+                <td rowspan="2" width="30%">
+                    <img src="images/image003.jpg" alt="Välkommen"
+                         width="300" height="500" />
+                </td>
+                <td width="5%"></td>
+            </tr>
+            <tr class="txtImages01">
+                <td width="5%"></td>
+                <td width="30%"></td>
+                <td width="30%">
+                    <img src="images/image004.jpg" alt="Välkommen"
+                         width="300" height="155" />
+                </td>
+                <td width="30%"></td>
+            </tr>
+            <tr class="txtImages02">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <img src="images/image005.jpg" alt="Välkommen"
+                         width="600" height="250" />
+                </td>
+                <td></td>
+            </tr>
+            <tr class="txtImages03">
+                <td></td>
+                <td></td>
+                <td colspan="2">
+                    <img src="images/image006.jpg" alt="Välkommen"
+                         width="600" height="250" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+
+        <br>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <footer>
+        </footer>
+
+        <script type="text/javascript">
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+/**
+ * fonction JS pour déplier et replier les menus
+ */
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
