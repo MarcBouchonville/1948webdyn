@@ -1,7 +1,7 @@
 {
     "elements": {},
     "attributes": {
-<<<<<<< HEAD
+
         "v-bind:class": {},
         "@click": {},
         "v-on:click": {
@@ -12,7 +12,7 @@
             "context": "p"
         },
         "v-show": {}
-=======
+
         "v-von:click": {
             "context": "div"
         },
@@ -22,6 +22,6 @@
         },
         "v-for((line,y)": {},
         "v-for": {}
->>>>>>> origin/master
+
     }
 }
