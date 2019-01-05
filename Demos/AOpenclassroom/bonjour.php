@@ -21,7 +21,7 @@ and open the template in the editor.
             {	
                     for ($i = 0 ; $i < $_GET['repeter'] ; $i++)
                     {
-                            echo 'Bonjour ' . $_GET['prenom'] . ' ' . $_GET['nom'] . ' !<br />';
+                            echo 'Bonjour ' . strip_tags($_GET['prenom']) . ' ' . strip_tags($_GET['nom']) . ' !<br />';
                     }
             }
     }
