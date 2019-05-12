@@ -1,0 +1,188 @@
+<! DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			Langage Python Théorie
+		</title>
+		<link rel = "stylesheet" type = "text/css" href = "styles\accueil.css">
+	</head>
+	<body>
+		<header class="py">
+			<center><h1><b><u>Langage Python</u></b></h1></center>
+			<nav>
+				<center><h2><a href = "Site internet_index.html"> Accueil </a>&nbsp;
+				<a href = "Langage de programmation.html">Langage de programmation</a>&nbsp;
+				<a href = "Quizz\Python\Python_ex.html"> Exercices </a></h2></center>
+			</nav>
+		</header>
+		<section>
+			<h2 class = "py"><u>Les Bases</u></h2>
+			<div class="alignement-1">
+				<h3><u>La syntaxe</u></h3>
+				<p>
+					<img src="Photos/calculator.png" alt=" Photos de boucle" width="100" height="75" class="imgDroite">
+				</p>
+				<p>
+					Pour que notre code en python puisse être compris par notre ordinateur, nous devons l'écrire d'une certaine manière. C'est ce qu'on appelle la syntaxe.Par exemple, lorsque l'on veut déclarer une variable, celle-ci doit <span class="important">toujours se trouver à gauche du signe "="</span>.</br>
+					Il faut savoir que à chaque ligne correspond une commande.Nous ne pouvons pas déclarer deux variables sur une même ligne, il faut faire la sépartion par un retour à la ligne.<br>
+					Pensez aussi que certaines fonction demande que l'on fasse des tabulations pour que celles-ci sachent ce qu'elles doivent exécuter.
+				</p>
+				<h3><u>Les variables</u></h3>
+				<p>
+					En python, comme dans plusieurs langages informatiques, il existe ce qu'on appelle des variables. Elles permettent de <span class="important">stocker des valeurs jusqu'à la fin de l'exécution du programme</span>.<br>
+					Ces variables peuvent prendre plusieurs types:
+					<ul>
+						<li> int: Des nombres entiers (exemple: 50,20,1,<span style="font-family: Arial;">-</span>2)</li>
+						<li> float: Des nombres réels (exemple: 50.1,60.7) <span class="important"> La virgule s'écrit grâce à un point!</span></li> 
+						<li> str: Caractères (exemple: 'a','ABC','&','123') <span class="important"> Notez l'importance des guillemets.</span></li>
+						<li> list: Liste de variables (exemple: [1,2,'ABC'])</li>
+						<li> dict: Liste de clés associées à des variables (exemple: {'oeufs':1,'Jambon':2,'lettre':'A'})<li>
+						<li> bool: Valeur vraie ou fausse. On aura donc <span style="color: #8EF66E;">True</span> ou <span style="color: #8EF66E;">False</span> comme valeur.</li>
+					</ul>
+					Pour pouvoir les utiliser, il faut d'abord leurs attribuer une valeur ou sinon le programme nous renverra une erreur.<br>
+					Il faut donc utiliser la syntaxe adéquate qui est la suivante:
+						<div class="decalage"><"nom de ma variable"> = <"donnée adéquate"></div>
+					Voici un exemple où nous attribuons la valeur 1 à notre variable: 
+						<div class="decalage">MaVariable = 1</div>
+					Nous ne sommes bien évidemment pas obliger de mettre à chaque fois une valeur fixe dans nos variables. Il est tout à fait possible d'utiliser des signes mathématique comme le +,*,/,<span style="font-family: Arial;">-</span> ou modulo, ainsi que des variables dans nos calculs.	
+				</p>
+				<h3><u>La fonction print</u></h3>
+				<p>
+					<img src="Photos/printer.png" alt=" Photos d'imprimante" width="200" height="200" class="imgDroite" style="padding-right: 75px;">
+				</p>
+				<p>
+					Maintenant que nous avons nos données, il faut pouvoir les présenter. Pour se faire nous allons utiliser la fonction print():<br>
+						<span class="decalage">print(MaVariable)</span><br>
+					Cette fonction ne sert pas que pour afficher notre résultat, elle peut aussi afficher du texte. Nous pouvons même mélanger le texte et nos variables:<br>
+						<span class="decalage">print('Du texte ',MaVariable,' suite du texte ', DeuxiemeVariable)</span><br>
+					Nous pouvons aussi très bien faire des calculs:<br>
+						<span class="decalage">print('1+1=', 1+1)</span><br>
+					<ul>
+						<li>\n: Permet de faire un retour à la ligne.</li>
+						<li>\t: Permet de faire une tabulation.</li>
+						<li>\\: Permet d'afficher un slash.</li>
+						<li>\" et \': Permet d'afficher des guillemets.</li>
+					</ul>
+				</p>
+				<h3><u>La fonction input</u></h3>
+				<p>
+					La fonction input permet de récupérer des données entrées par l'utilisateur. Ces données doivent être sauvegardées dans une variable:<br>
+					<span class="decalage">MaVariable = input("Un peu de texte : ")</span><br>
+					Vous n'avez besoin de rien d'autre, l'utilisateur rentrera ce qu'il veut <span class="important">(il faut donc prévoir les erreurs)</span><br>
+					Cependant, peut importe ce qu'il rentrera, vous obtienderez toujours une valeur sous forme de str. Pour éviter celà, vous devez préciser au programme qu'il faut convertir la valeur comme dans l'exemple ci-dessous:<br>
+					<span class="decalage">MaVariable = int(input("Je veut un entier : "))</span>
+				</p>
+			</div>
+			<h2 class="py"><u>Les conditions</u></h2>
+			<div class="alignement-1">
+				<p>
+					Les conditions permettent de dire à notre programme d'effectuer certaines actions, seulement <span class="important">si la condition entrée est remplie</span>. Nous allons donc utiliser :
+					<ul>
+						<li>if: Pour vérifier une condition.</li>
+						<li>elif: Pour vérifier une autre condition dans si une autre condition de notre bloc n'a pas été remplie. </li>
+						<li>else: Si aucune des conditions n'a été remplie.</li>
+					</ul>
+					Une fois notre condition écrite, on met ":" pour la terminer. On fait ensuite un retour à la ligne et une <span class="important">tabulation</span>. La condition va exécuter tout le code qui est dans son bloc.<br>
+					Pour pouvoir créer une condition, il faut aussi de quoi faire des comparaison:
+					<ul>
+						<li>== : Permet de vérifier si c'est équivalant.</li>
+						<li>!= : Permet de vérifier si c'est différent.</li>
+						<li>and : Permet de vérifier si deux conditions sont remplies.</li>
+						<li>or : Permet de vérifier si au moins une condition est remplie.</li>
+					</ul>
+				</p>
+			</div>
+			<h2 class = "py"><u>Les listes et dictionnaires</u></h2>
+			<div class="alignement-1">
+				
+				<h3><u>Les listes</u></h3>
+				<p>
+					En Python, les listes sont des objets qui peuvent en contenir d'autres. Ce sont donc des séquences, comme les chaînes de caractères, mais au lieu de contenir des caractères, elles peuvent contenir n'importe quel objet.<br>
+					Une liste utilise des "[ ]", c'est à ça que nous pouvons la reconnaitre:<br>
+					<span class="decalage">MaListe = ["a", 1, MaVariable]</span><br>
+					<p>
+					<img src="Photos/parcho.png" alt=" Photos de parchemin" width="100" height="100" class="imgDroite" style="padding-right: 500px;">
+					</p>
+					<ul>
+						<li>MaListe[0]: Affiche le premier élément d'une liste.</li>
+						<li>Maliste[-1]: Affiche le dernier élément de ma liste.</li>
+						<li>MaListe[0:2]: Affiche le premier jusqu'au troisième élément d'une liste.</li>
+						<li>MaListe.append(10): Ajoute l'élément 10 à ma liste.</li>
+						<li>MaListe.extend(Liste2): Ajoute la Liste2 dans MaListe.</li>
+						<li>del MaListe[0]: Supprime le premier élément d'une liste.</li>
+						<li>Maliste.remove(A): Supprime la variable A de ma liste.</li>
+					</ul>
+					Avec les listes, nous associons souvent les tuples. Les tuples sont des éléments dont on ne peut ni rajouter, ni supprimer, ni modifier les données:<br>
+					<span class="decalage">MonTuple = ("Langage", "Python")</span><br>
+				</p>
+				<h3><u>Les dictionnaires</u></h3>
+				<p>
+					<img src="Photos/dico.png" alt=" Photos de dico" width="300" height="200" class="imgDroite">
+				</p>
+				<p>
+					Les dictionnaires sont comme des listes, excepté qu'ils comportent des clé pour pouvoir les identifier:<br>
+					<span class="decalage">MonDico = {"clé1":1, "clé2": 'A'}</span><br>
+					Nous pouvons facilement ajouter une clé à un dictionnaire grâce à:<br>
+					<span class="decalage">MonDico["NouvelleClé] = 42</span><br>
+					Ceci ajoutera la clé "NouvelleClé" ayant comme valeur 42.
+					<ul>
+						<li>MonDico.get("Name"): Donne la valeur de la clé "Name".</li>
+						<li>MonDico.get("Name", "Pas de nom"): Donne la valeur de la clé "Name" et la crée avec comme valeur "Pas de nom" si elle n'existe pas.</li>
+						<li>MonDico.has_key("Name"): Renvoie un booléen pour savoir si la clé existe.</li>
+						<li>del MonDico["nom"]: Supprime la clé "nom".</li>
+						<li>fiche.keys(): Récupère la clé à l'aide d'une boucle.</li>
+						<li>fiche.values() : Récupère les données à l'aide d'une boucle.</li>
+						<li>fiche.items() : Récupère les données et la clé à l'aide d'une boucle et les place dans un tuple.</li>
+					</ul>
+				</p>
+			</div>
+			<h2 class="py"><u>Les boucles</u></h2>
+			<div class="alignement-1">
+				<p>
+					<img src="Photos/boucle.png" alt=" Photos de boucle" width="400" height="300" class="imgGauche">
+				</p>
+				<p>
+					Les boucles, comme leur nom l'indique, permettent d'effectuer du code en boucle. 
+				</p>
+				<h3><u>La boucle for</u></h3>
+				
+				<p>
+					
+					La boucle for exécute du code jusqu'à ce qu'elle arrive à la fin de son compteur:<br>
+					<span class="decalage">for i in (0,10):</span><br>
+					Ici, la valeur de i changera à chaque boucle (vous pouvez vous asumer à l'afficher).<br>
+					Nous avons aussi la possibilité d'utiliser des listes:<br>
+					<span class="decalage">for i in MaListe:</span><br>
+					Ici, i prendra chaque valeur de notre liste.
+				</p>
+				<h3><u>La boucle while</u></h3>
+				<p>
+					La boucle while permet d'exécuter du code temps que sa condition est remplie:<br>
+					<span class="decalage">while (i<10):</span><br>
+					Ici, nous aurons une boucle jusqu'à ce que la valeur de i soit plus grande que 10.<br>
+					<span class="important"> Faites attention à ce que votre condition puisse se terminer ou sinon vous aurez une boucle infinie!</span>
+				</p>
+			</div>
+			<h2 class="py"><u>Les fonctions</u></h2>
+			<div class="alignement-1">
+				<p>
+					Une fonction est une suite d'instruction que l'on peut appeller.<br>
+					Pour pouvoir utiliser une fonction, il faut d'abord la définir:<br>
+					<span class="decalage">def MaFonction(Option):</span><br>
+					<span class="decalage">"""Documentation de ma fonction"""</span><br>
+					<span class="decalage">print("C'est ma fonction")</span><br>
+					<u>Remarque:</u> Les fonctions n'ont pas nécessairement des options à chaque fois. Elle peuvent en avoir plusieurs aussi.<br>
+					Les options permettront d'envoyer les valeurs des variables dans notre fonction pour qu'elle puisse les utiliser.<br>
+					Pour que notre fonction renvoie un résultat, il faut utiliser "return" suivi de ce que nous voulons renvoyer. Le return mettra fin à notre fonction et renverra une seule variable, c'est pourquoi nous utiliserons une liste pour renvoyer plusieurs valeurs. Il faut cependant penser à sauvegarder le résultat dans une variable:<br>
+					<span class="decalage">MaVariable = MaFonction()</span><br>
+				</p>
+			</div>
+		</section>
+		<footer class="py">
+			<hr>
+			<p>Pour les plus curieux, vous pouvez naviguer vers le site suivant <a href="https://www.w3schools.com/">https://www.w3schools.com/</a>. Celui-ci vous donnera plus d'informations.</p>
+			<h5>Aide<center>Contact</center>Support</h5>
+		</footer>
+	</body>
+</html>

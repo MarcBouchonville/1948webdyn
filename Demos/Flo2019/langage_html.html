@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Langage html</title>
+		<link rel = "stylesheet" type = "text/css" href = "styles\accueil.css">
+	</head>
+	<body>
+		<header class="py">
+			<center><h1><b><u>Langage html</u></b></h1></center>
+			<nav>
+				<center><h2><a href = "Site internet_index.html"> Accueil </a>&nbsp;
+				<a href = "Langage de programmation.html">Langage de programmation</a>&nbsp;
+				<a href = "Langage de programmationex.html"> Exercices </a></h2></center>
+			</nav>
+		</header>
+		<section>
+			<img src="Photos/html_cours.jpg" alt="photo de html" width="230px" height="170px">
+			<br><p>Le langage html(HyperText Markup Language) est un langage de balisage introduit en 1993, il définit le contenu d'une page. Ainsi, tous les sites que vous visitez sont écris en html (ou en d'autres langages spécifiques).
+			Ce langage est facile à utiliser lorsque l'on connait les balises. Quelques une de celles-ci sont décrites et expliquées ci-dessous. De plus, si vous désirez habiller votre page, il existe un langage lié à l'html. Celui-ci s'appelle le langage CSS
+			 (Cascading Style Sheet) apparu en 1997.</p><br>
+			<img src="Photos/balise.jpg" alt="balise html" width="350px" height="200px">
+			<h2 class="py"><u>Balises de base</u></h2>
+				<div class="alignement-1"><br>
+					<p><h3><u>Balises par paire</u></h3>
+						<p>
+						<img src="Photos/html_balise_base.gif" alt="Schéma d'une page html" width="250" height="280" class="imgDroite" style="padding-right: 25px;">
+						</p>
+						<ul>
+							<li>&#139html&#155 : ouverture d'une page html</li>
+							<li>&#139head&#155 : zone d'en-t&#234te du fichier HTML </li>
+							<li>&#139title&#155 : titre générique du document Web </li>
+							<li>&#139body&#155 : corps du document </li>
+							<li>&#139header&#155 : reprend l'en-tête de la page</li>
+							<li>&#139section&#155 : définit la zone dans laquelle sera traité un même sujet ou une même fonctionnalité</li>
+							<li>&#139footer&#155 : définit le pied de page</li>
+							<li>&#139h1&#155, h2, h3, h4, h5 et h6 : permettent d'identifier les titres et le numéro leur donne une importance différente</li>
+							<li>&#139p&#155 : paragraphe</li>
+							<li>&#139nav&#155 : balise de section qui contient la navigation</li>
+							<li>&#139a&#155 : Un lien hypertexte peut aussi bien &ecirctre plac&eacute sur du texte que sur une image ou les deux à la fois.</li>
+							<li>href = "" : attribut qui contient un url. Celui-ci peut &ecirctre bas&eacute soit sur l'adressage relatif(C'est le chemin à parcourir entre
+							le fichier appelant (là où on introduit le lien) et le fichier appel&eacute (celui qui s'ouvre))
+							soit sur l'adressage absolu(url complète d'un fichier)</li>
+							<li>&#139link&#155 : Permet de lier une feuille de styles à un document HTML. Doit être ins&eacuteré dans la partie "head" du document HTML.</li>
+							<li>rel = "" : attribut qui pr&eacutecise que c'est une feuille de style</li>
+							<li>type = "" : attribut qui d&eacutefinit le type de feuille de style</li>
+							<li>href = "" : attribut qui contient le lien vers la feuille de style</li>
+						</ul>
+					</p>
+					<p><h3><u>Balises orphelines</u></h3>
+					<ul>
+						<li>&#139br&#155 : retour à la ligne</li>
+						<li>&#139hr&#155 : ligne horizontale</li>
+					</ul>
+					</p>
+				</div>
+			<h2 class="py"><u>Balises de styles</u></h2><br>
+				<div class="alignement-1">
+					<p><h3><u>Balises par paire</u></h3>
+					<ul>
+						<li>&#139b&#155 : met en gras</li>
+						<li>&#139i&#155 : met en italique</li>
+						<li>&#139u&#155 : souligne</li>
+						<li>&#139style&#155 : ins&eacuterer un code css dans le corps html</li>
+					</ul>
+					</p>
+				</div>
+				<div class="alignement-1">
+					<p><h3><u>Balises de structure</u></h3>
+						<p><h4><u>Listes</u></h4>
+								<ul>
+									<li>&#139ul&#155 : liste à puces</li>
+									<li>&#139ol&#155 : liste ordonnée</li>
+								</ul>	
+								<img src="Photos/html_tableau.png" alt="Schéma d'un tableau" width="200" height="190" class="imgDroite" style="padding-right: 25px;">
+							<h4><u>Tableaux</u></h4> 
+								<ul>
+									<li>&#139table border=""&#155 : ouverture d'un tableau, la balise border d&eacutefinit si le tableau doit &#234tre
+									encadr&eacute(border=1) ou non(border=0)</li>
+									<li>&#139caption&#155 : balise qui permet de légender le tableau. Doit être placée tout de suite après l'ouverture du tableau</li>
+									<li>&#139tr&#155 : d&eacutefinit les lignes du tableau</li>
+									<li>&#139td&#155 : d&eacutefinit la ligne du tableau</li>
+									<li>&#139thead&#155 : définit l'en-tête du tableau qui comprendra les intitulés de colonnes</li>
+									<li>&#139th&#155 : d&eacutefinit l'en-tête, fonctionne comme la balise td</li>
+									<li>&#139tbody&#155 : balise de corps de tableau qui reprendra toutes les lignes qui comprennent les données</li>
+								</ul>
+							<h4><u>Formulaires</u></h4>
+								<ul>
+									<li>&#139form&#155 : d&eacutelimite la zone du formulaire</li>
+									<li>method = "" : attribut qui signale au serveur de quelle mani&egravere sont pass&eacutees les informations</li>
+									<li>action = "" : param&egravetre qui signale au serveur l'adresse du script qui va traiter les informations encod&eacutees. Le script est un CGI ou un fichier php,...</li>
+									<li>&#139input&#155 : permet d'ins&eacuterer un champ dans le formulaire</li>
+									<li>type = "" : attribut de l'input. Ces valeurs peuvent &ecirctre : text, radio, checkbox, password, submit, email, ...</li>
+									<li>value = "" : attribut qui d&eacute la valeur du champ</li>
+									<li>&#139textarea&#155 : permet de disposer d'une zone de texte plus ou moins grande o&ugrave l’utilisateur peut &eacutecrire un texte plut&ocirct qu’une phrase.</li>
+									<li>&#139select&#155 : permet d'ins&eacuterer une liste d&eacuteroulante</li>
+									<li>&#139option&#155 : permet d'ajouter une option dans la liste d&eacuteroulante</li>
+									<li>name = "" : attribut qui s'applique à tous les champs et qui pr&eacutecise le nom d'un champ.  Ce nom est utilis&eacute par les scripts lors de la r&eacutecupération des donn&eacutees.</li>
+								</ul>
+							<h4><u>Images</u></h4>
+								<ul>
+									<li>&#139img&#155 : ins&egravere une image</li>
+									<li>src = "" : attribut qui pr&eacutecise l'url de l'image source</li>
+									<li>alt = "" : attribut qui donne un nom &eacutequivalent à l'image lorsque celle-ci n'est pas prise en compte par le serveur</li>
+									<li>width = "" : permet d'indiquer la largeur de l'image, mesurée en pixel (px) ou en pourcentage (%)</li>
+									<li>height = "" : permet d'indiquer la hauteur de l'image, mesurée en pixel (px) ou en pourcentage (%)</li>
+									<li>&#139figure&#155 : rassemble les images et les légendes qui y sont associées</li>
+									<li>&#139figcaption&#155 : permet de placer une légende</li>
+								</ul>
+							<h4><u>Contenus multimédias</u></h4>
+								<ul>
+									<li>&#139audio&#155 : permet d'insérer un fichier audio</li>
+									<li>&#139video&#155 : permet d'insérer une vidéo</li>
+									<li>controls : attribut des balises "audio" et "video" assurant la présence des contrôles de lecture</li>
+									<li>&#139iframe&#155 : permet d'intégrer du contenu externe dans vos pages</li>
+									<li>src = "" : attribut qui pr&eacutecise l'url du fichier audio ou de la vidéo</li>
+									<li>height = "" : attribut vous permet de définir une valeur en pixels définissant la hauteur de l'iframe</li>
+									<li>width = "" : attribut vous permet de définir une valeur en pixels définissant la largeur de l'iframe</li>
+								</ul>
+						</p>
+					<p>
+					<center><img src="Photos/html_vidéo_audio.png" alt="Exemple de code" width="600" height="210"></center>
+					</p>
+					</p>
+				</div>
+		</section>
+		<footer>
+			<hr>		
+			<p>Pour les plus curieux, vous pouvez naviguer vers le site suivant <a href="https://www.w3schools.com/">https://www.w3schools.com/</a>. Celui-ci vous donnera plus d'informations.</p>
+			<h5>Aide<center>Contact</center>Support</h5>
+		</footer>
+	</body>
+</html>

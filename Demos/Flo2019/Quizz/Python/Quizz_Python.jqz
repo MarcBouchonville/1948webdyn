@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jquiz-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>ced</dc:creator>
+    <dc:title>Quizz sur le langage Python : Base</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>6</version>
+
+<data>
+<title>Quizz sur le langage Python : Base</title>
+
+<timer><seconds>60</seconds><include-timer>0</include-timer></timer>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions><question-record><question>Quelle type aura ma variable :
+Entier = input (&quot;Entrez un entier : &quot;)</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>str</text><feedback>Bien jou&amp;#x00E9; ! 
+Si nous ne concatenons pas un type pour un input, il prend automatiquement le type str.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>float</text><feedback>Faux ! float correspond aux nombres &amp;#x00E0; virgules.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>int</text><feedback>En plein dans le panneau !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>il n&apos;aura pas de type</text><feedback>Un input renvoie toujours une variable avec un type.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Si je veux avoir une variable bool&amp;#x00E9;enne. Que dois-je mettre (Plusieurs r&amp;#x00E9;ponses).</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>4</question-type><answers><answer><text>True</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>true</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>False</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>false</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers><must-select-all>1</must-select-all></question-record><question-record><question>Quelle synthaxe est correcte pour afficher &quot;Prix : 25 euros&quot;, si MaVariable vaut 25 ?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>print &quot;Prix : &quot;,MaVariable,&quot; euros&quot;</text><feedback>Il doit manquer quelque chose</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>print(Prix : MaVariable euros)</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>print(&quot;Prix : MaVariable euros&quot;)</text><feedback>Le r&amp;#x00E9;sultat sera : Prix : MaVariable euros</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>printf(&quot;Prix : %d euros&quot;, MaVariable);</text><feedback>Correct....Si nous &amp;#x00E9;tions en C ! Ici nous sommes en Python.</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>print(&quot;Prix : ,MaVariable, euros&quot;)</text><feedback>Le r&amp;#x00E9;sultat sera : Prix : ,MaVariable, euros</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>print(&quot;Prix : &quot;,MaVariable,&quot; euros&quot;)</text><feedback>Correct ! Il faut &amp;#x00E9;videmment mettre notre texte entre guillemets et s&amp;#x00E9;parer nos variables avec des virgules.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Dans mon code, que se passera-t-il si j&apos;&amp;#x00E9;cris : 25 = A ?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>J&apos;aurai une erreur</text><feedback>Correct ! La variable se met toujours &amp;#x00E0; gauche.</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Ma variable A vaudra 25</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Ma variable 25 vaudra un str &quot;A&quot;</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Ma variable 25 vaudra la valeur de la variable A</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Si je veut faire un nombre &amp;#x00E0; virgule, je dois :</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>Utiliser un point comme virgule</text><feedback>Correct !</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Utiliser une virgule</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Faire : haut, haut, bas, bas, gauche, droite, gauche, droite, B, A</text><feedback>&amp;#x00E7;a, c&apos;est le Konami Code...</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Je ne peut pas</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Parmis les propositions, les quels sont des listes ?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>4</question-type><answers><answer><text>[a,b,c,d]</text><feedback>Correct !</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>{a,b,c,d}</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>(a,b,c,d)</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>[1]</text><feedback>Correct !</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>[(1,2,3) , a ,b]</text><feedback>Correct</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>([1,2,3])</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers><must-select-all>1</must-select-all></question-record><question-record><question>A quoi sert le &quot;print()&quot; ?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>4</question-type><answers><answer><text>Afficher du texte</text><feedback>Correct !</feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Imprimer une feuille</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>A faire une empreinte</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Faire un calcul</text><feedback>Faux !</feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers><must-select-all>1</must-select-all></question-record></questions>
+</data>
+
+<hotpot-config-file>
+<jquiz>
+<exercise-subtitle>Quiz</exercise-subtitle>
+<instructions></instructions>
+<guess-correct>Correct!</guess-correct>
+<guess-incorrect>Essayez encore ! </guess-incorrect>
+<partly-incorrect>Une partie de la r&amp;#x00E9;ponse est fausse : </partly-incorrect>
+<enter-a-guess>Entrez votre r&amp;#x00E9;ponse</enter-a-guess>
+<next-correct-letter>petit indice :  </next-correct-letter>
+<correct-answers>La bonne r&amp;#x00E9;ponse est :</correct-answers>
+<show-answer-caption>solution</show-answer-caption>
+<include-hint>0</include-hint>
+<include-show-answer>1</include-show-answer>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<continuous-scoring>1</continuous-scoring>
+<show-correct-first-time>1</show-correct-first-time>
+<shuffle-questions>1</shuffle-questions>
+<shuffle-answers>1</shuffle-answers>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>2</questions-to-show>
+<short-answer-tries-on-hybrid-q>2</short-answer-tries-on-hybrid-q>
+<separate-javascript-file>0</separate-javascript-file>
+<case-sensitive>0</case-sensitive>
+<include-keypad>0</include-keypad>
+</jquiz>
+
+<global>
+<your-score-is>Votre score est de </your-score-is>
+<correct-indicator>V</correct-indicator>
+<incorrect-indicator>X</incorrect-indicator>
+<correct-first-time>Du premier coup !  </correct-first-time>
+<completed-so-far>Questions compl&amp;#x00E9;t&amp;#x00E9;es : </completed-so-far>
+<exercise-completed>Vous avez compl&amp;#x00E9;t&amp;#x00E9; l&apos;excercice</exercise-completed>
+<keypad-characters></keypad-characters>
+<times-up>Your time is over!</times-up>
+<next-ex-caption>=&amp;#x003E;</next-ex-caption>
+<back-caption>&amp;#x003C;=</back-caption>
+<contents-caption>Index</contents-caption>
+<include-next-ex>0</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>index_exercice.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>Geneva,Arial,sans-serif</font-face>
+<font-size>small</font-size>
+<page-bg-color>#000000</page-bg-color>
+<title-color>#008000</title-color>
+<ex-bg-color>#004000</ex-bg-color>
+<text-color>#80ff00</text-color>
+<link-color>#00ff00</link-color>
+<vlink-color>#00ff40</vlink-color>
+<nav-bar-color>#004000</nav-bar-color>
+<formmail-url>http://yourserver.com/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourserver.com</email>
+<name-please>Please enter your name:</name-please>
+<user-string-1>one</user-string-1>
+<user-string-2>two</user-string-2>
+<user-string-3>three</user-string-3>
+<header-code></header-code>
+<correct-first-time>Du premier coup !  </correct-first-time>
+<check-caption>V&amp;#x00E9;rifier</check-caption>
+<ok-caption>OK</ok-caption>
+<next-q-caption>=&amp;#x003E;</next-q-caption>
+<last-q-caption>&amp;#x003C;=</last-q-caption>
+<hint-caption>Hint</hint-caption>
+<show-all-questions-caption>Montrer toutes les questions</show-all-questions-caption>
+<show-one-by-one-caption>Montrer les questions une par une</show-one-by-one-caption>
+<show-also-correct>1</show-also-correct>
+<process-for-rtl>0</process-for-rtl>
+<include-scorm-12>0</include-scorm-12>
+</global>
+</hotpot-config-file>
+</hotpot-jquiz-file>

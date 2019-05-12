@@ -1,0 +1,70 @@
+body{
+background-color : black;
+height : 100%;
+color: LimeGreen;
+font-family:goudy old style, Garamond, Times New Roman, serif;
+text-align : center;
+cursor : url(cursor.ani), pointer; 
+}
+a:link{
+color : LightSteelBlue;
+cursor : url(cursor.ani), pointer;
+}
+a:visited{
+color : LightSteelBlue;
+cursor : url(cursor.ani), pointer;
+}
+a:hover{
+color : Teal;
+cursor : url(cursor.ani), pointer;
+}
+
+
+footer hr{
+color : LightSteelBlue;
+margin-left: 50px;
+margin-right: 50px;
+}
+.alignement-1{
+text-align : left;
+}
+ul{
+list-style-type: none;
+}
+h4{
+margin-left: 30px;
+}
+.important{
+	color: #F42727; /*rouge*/
+	font-weight: bold; 
+	text-decoration: underline;
+}
+.alignement-2{
+	text-align: left;
+	margin-left: 25px;
+	margin-right: 25px
+}
+
+.decalage{
+	margin-left: 25px;
+}
+.py{
+background-image: url("../Photos/ban_verte.jpg");
+background-repeat: repeat-x;
+background-size: auto;
+}
+
+.imgDroite{
+	float: right;
+	margin-left: 10px;
+	margin-top: 10px;
+	
+}
+
+.imgGauche{
+	float: left;
+	margin-right: 10px;
+}
+b{
+	color:red;
+}

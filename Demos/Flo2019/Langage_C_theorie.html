@@ -1,0 +1,81 @@
+<! DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			Langage C théorie.
+		</title>
+		<link rel = "stylesheet" type = "text/css" href = "styles/accueil.css">
+	</head>
+	<body>
+		<header class="py">
+			<center><h1><b><u>Langage C</u></b></h1></center>
+			<nav>
+				<center><h2><a href = "Site internet_index.html"> Accueil </a>&nbsp;
+				<a href = "Langage de programmation.html">Langage de programmation</a>&nbsp;
+				<a href = "Quizz\C\Cex.htm"> Exercices </a></h2></center>
+			</nav>
+		</header>
+		<section>
+			<h2><u>Les Bases</u></h2>
+			<img src="Photos/c_base.png" alt="image du langage C" width="350px" height="250px">
+			<div class="alignement-1">		  
+			<h3><u>La syntaxe</u></h3>
+				<p>Dans le langage C, la règle la plus importante, est de mettre un ; à la fin de chaque instruction.<br>
+				Pour pouvoir afficher du contenu sur notre écran, nous avons besoin d'ajouter au début du programme (en dehors de la fonction principale):<br>
+			<span class="decalage" style ="color :red "> #include &#139stdio.h&#155;</span><br>
+			De plus il faut créer une fonction principale tel que "void main (void)", ... .Cette fonction va nous permettre de pouvoir écrire notre code qui va être exécuté. Attention, le code doit être écrit entre des accolades ({}).<br>
+			Exemple : <div class="decalage"><span style = "color:red">#include<"stdio.h"><br> void main (void){<br> printf("Hello World");}</span></div>
+				</p>
+				<p>Cet exemple permet d'afficher Hello Word à l'écran.</p>
+				<h3><u>Les variables</u></h3>
+				<p>
+					<img class="imgGauche" src="Photos/variable.jpg" alt="Différents types de variable" width="250px" height="150px">
+					Comme tout langage de programmation, le langage C contient ses propres variables pour pouvoir fonctionner correctement.<br> 
+					Voici une petite liste avec les variables les plus courantes:
+					<ul style="margin-left: 250px">
+						<li>int: Donne des entiers</li>
+						<li>double ou float: Donne des réel à virgules(le double prend plus de place mémoire que le float).</li>
+						<li>char: Donne des caractères</li>
+					</ul>
+				</p><br>
+				<h3><u>Les différentes conditions</u></h3>
+				<p>
+				Le langage C comprend différentes conditons qui vont exécuter du code si elles sont remplies.
+				<h4><u>If/else</u></h4>
+				La condition if/else (en français si/sinon) donne un booléen. Si la valeur booléenne est TRUE, alors le bloc d'instruction dont la condition est remplie s'exécutera. Sinon ce sera l'autre bloc d'instruction.<br>
+				Exemple : <div class="decalage"><span style = "color:red">int rép = 3;<br>
+						  int nb ;<br>
+					      printf("Entrez un nombre: ");<br>
+						  scanf("%d", &nb);<br>
+						  if( nb == rép){<br>
+						  printf("Bonne réponse");}<br>
+						  else{<br>
+						  printf("Mauvaise réponse");}<br></span></div>
+					<p>
+					<img src="Photos/c_boucle.png" alt="Exemple de boucle" width="350" height="225" class="imgDroite" style="padding-right: 75px;">
+					</p>
+				<h4><u>While do</u></h4>
+				La condition while permet de faire une boucle et de ne pas pouvoir la quitter tant qu'une condition n'est pas satisfaite.<br>
+				Exemple : <div class="decalage"><span style = "color:red">int rép = 3;<br>
+						  int nb ;<br>
+					      printf("Entrez un nombre: ");<br>
+						  scanf("%d", &nb);<br>while( nb != rép){<br>printf("Pas bon redonner un nombre:");<br>scanf("%d", &nb);}<br></span></div>
+						Dans cette exemple le programme demande à l'utilisateur de donner un nombre et tand que ce nombre ne correspond pas à 3 le programme redemande un nombre jusqu'à ce que l'utilisateur donne 3.
+				<h4><u>Do While</h4></u>
+				la condition do while à la même fonctionnnalité que la condition while sauf que il n'y a pas besoin de initialiser un int, char ou double pour pouvoir rentré dans la boucle.
+				<h4><u>For</u></h4>
+				La condition For permet de répeter un nombre de fois fixé l'instruction qui se trouve à l'intérieur.<br>
+				Exemple : <div class="decalage"><span style = "color:red">int i;<br> for ( i = 15; i>=10; i - -){<br> printf("%d %, i);<br>}<br>getchar();<br></span></div>
+				
+				
+			</div>
+		</section>
+		<footer>
+			<hr>
+			<p>Pour les plus curieux, vous pouvez naviguer vers le site suivant <a href="https://www.w3schools.com/">https://www.w3schools.com/</a>. Celui-ci vous donnera plus d'informations.</p>
+			<h5>Aide<center>Contact</center>Support</h5>
+		</footer>
+	</body>
+
+</html>
