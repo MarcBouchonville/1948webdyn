@@ -1,72 +1,94 @@
 <! DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8,ISO-8859-1">
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="author" content="Florence Bouchonville" />
+            <meta name="date" content="2019-05-15" scheme="YYYY-MM-DD" />
+            <meta name="expires" content="1 January 2020 ">
+            <meta name="keywords" lang="fr" content="travail de fin d'annee, Florence Bouchonville, etc" />
+            <meta lang="fr" name="description" content="Langage C" />
+            <meta lang="en" name="description" content="computer language C" />
+                 <!-- <link href="02CSS/Style001.css" rel="stylesheet" media="all" /> -->
+            <link href="styles/accueil.css" rel="stylesheet" media="only screen and (min-device-width: 640px)" />
+            <link href="styles/Style002.css" rel="stylesheet" media="only screen and (max-device-width: 639px)" />
+            <link href="styles/Style002.css" rel="stylesheet" media="screen and (max-device-width: 639px) and handheld" />
+
+        <!-- FIN DES DETAILS AJOUTES  -->
 		<title>
 			Principe de programmation 
 		</title>
 		<link rel = "stylesheet" type = "text/css" href = "styles/accueil.css">
 	</head>
-	<body>
+	<body id="corpsPrincipePrg">
 		<header class="py">
 		
-			<center><h1><b><u>Principe de programmation</u></b></h1></center>
+			<h1><b><u>Principe de programmation</u></b></h1>
 			<nav>
-			<center><h2><a href = "Site internet_index.html"> Accueil </a>&nbsp;
-			<a href = "Langage de programmation.html">Langage de programmation</a></h2></center>
+			<h2>
+                            <a href = "Site internet_index.html"> Accueil </a>&nbsp;
+                            <a href = "Langage de programmation.html">Langage de programmation</a>
+                        </h2>
 			</nav>
 		</header>
 		<section>
-			<h2><b><u>Théorie :</u></b></h2>
-			Le cours de principe de programmation est à peu près la même chose que langage de programmation (Langage C) mais cela se fait sur une feuille de papier avec des paramètres différents. <br>
+			<h2><b><u>Th&eacute;orie :</u></b></h2>
+			Le cours de principe de programmation est ï¿½ peu prï¿½s la mï¿½me chose que langage de programmation (Langage C) mais cela se fait sur une feuille de papier avec des paramï¿½tres diffï¿½rents. <br>
 			<div class="alignement-1">	
 			<h3><b><u>Ce qui faut savoir avant de commencer :</u></b></h3>
-			Si on veut afficher une valeur et pas ce qu'il contient on doit le mettre entre guillemets (« P ») <br>
-			Pour faire un égal on utilise : = (P: =4  "la lettre P contient la valeur 4").<br>
+			Si on veut afficher une valeur et pas ce qu'il contient on doit le mettre entre guillemets (ï¿½ P ï¿½) <br>
+			Pour faire un ï¿½gal on utilise : = (P: =4  "la lettre P contient la valeur 4").<br>
 			<h3><b><u>Qu'est-ce que c'est un algorithme ? :</u></b></h3>
-			Un algorithme est une suite d'instructions permettant la résolution de problèmes (simples et compliqués). 
-			<h3><b><u>Les différents mots réservés :</u></b></h3>
+			Un algorithme est une suite d'instructions permettant la rï¿½solution de problï¿½mes (simples et compliquï¿½s). 
+			<h3><b><u>Les diffï¿½rents mots rï¿½servï¿½s :</u></b></h3>
 			<h4><u>INPUT :</u></h4>
-			Ce paramètre permet à l'utilisateur de rentrer quelque chose dans le programme. Ce paramètre correspond au paramètre scanf du langage C <br>
-			<div class="decalage"><span style = "color: red">La photo suivante montre un exemple où l’on entre le taux et une valeur euro. Attention, vous remarquez que le mot valeur euros est collé et qu'il y a une majuscule à valeur et euros. Si on veut entrer un mot composé, il faut le coller et mettre à chaque nouveau mot une majuscule. Exemple : valeur euro cela va s'écrire ValeurEuro. </span></div><br>
+			Ce paramï¿½tre permet ï¿½ l'utilisateur de rentrer quelque chose dans le programme. Ce paramï¿½tre correspond au paramï¿½tre scanf du langage C <br>
+			<div class="decalage"><span style = "color: red">La photo suivante montre un exemple oï¿½ lï¿½on entre le taux et une valeur euro. Attention, vous remarquez que le mot valeur euros est collï¿½ et qu'il y a une majuscule ï¿½ valeur et euros. Si on veut entrer un mot composï¿½, il faut le coller et mettre ï¿½ chaque nouveau mot une majuscule. Exemple : valeur euro cela va s'ï¿½crire ValeurEuro. </span></div><br>
 		
 			<h4><u>OUTPUT :</u></h4>
-			Ce paramètre permet à l'utilisateur d'afficher quelque chose sur l'écran. Ce paramètre s'apparente au paramètre printf du langage C.<br>
-			<div class="decalage"><span style = "color:red">Dans l'exemple suivant, l’OUTPUT va afficher ce que contient P c'est-à-dire A*B mais si on voulait afficher la lettre P on aurait mis des guillemets (OUTPUT : ="P")</span></div> 
-			<img class="imgGauche" src="Photos/Input_Output.jpg" width="400px" height="170px">
-			<img src="Photos/Input_Output2.jpg" width="350px" height="170px"><br>
+			Ce paramï¿½tre permet ï¿½ l'utilisateur d'afficher quelque chose sur l'ï¿½cran. Ce paramï¿½tre s'apparente au paramï¿½tre printf du langage C.<br>
+			<div class="decalage"><span style = "color:red">Dans l'exemple suivant, lï¿½OUTPUT va afficher ce que contient P c'est-ï¿½-dire A*B mais si on voulait afficher la lettre P on aurait mis des guillemets (OUTPUT : ="P")</span></div> 
+			<img class="imgGauche" src="Photos/Input_Output.jpg" id="image007"/>
+			<img src="Photos/Input_Output2.jpg" id="image008" />
+                        <br>
 			
 			<h4><u>WHILE DO :</u></h4>
 			La condition while permet de faire une boucle et de ne pas pouvoir la quitter tant qu'une condition n'est pas satisfaite. <br>
-			<center><img src="Photos/While.jpg" width="350px" height="170px"></center>
+                        <br>
+                        <img src="Photos/While.jpg" id="image009">
 			
 			<h4><u>DO WHILE</u></h4>
-			la condition do while a la même fonctionnalité que la condition while sauf qu'il n'y a pas besoin d'initialiser un int, char ou double pour pouvoir rentrer dans la boucle.
+			la condition do while a la mï¿½me fonctionnalitï¿½ que la condition while sauf qu'il n'y a pas besoin d'initialiser un int, char ou double pour pouvoir rentrer dans la boucle.
 			
 			<h4><u>For</u></h4>
-			La condition For permet de répéter un nombre de fois fixé l'instruction qui se trouve à l’intérieur. <br>
+			La condition For permet de rï¿½pï¿½ter un nombre de fois fixï¿½ l'instruction qui se trouve ï¿½ lï¿½intï¿½rieur. <br>
 
 			<h4><u>IF/ELSE</u></h4>
-			La condition IF/ELSE permet d'exécuter une série d'instructions si la condition est remplie. <br>
-			<img class="imgGauche" src="Photos/IF_ELSE.jpg" width="350px" height="170px"><br><br><br><br><br><br><br><br><br>
+			La condition IF/ELSE permet d'exï¿½cuter une sï¿½rie d'instructions si la condition est remplie. <br>
+                        <br>
+                        <img src="Photos/IF_ELSE.jpg" id="image010" />
+                        <br><br>
 			
 			<h4><u>PARAM</u></h4>
-			L'instruction PARAM permet d'utiliser des données stockées dans une mémoire. Cela nous évite de réécrire des données à chaque instruction. Nous utilisons le PARAM, par exemple, dans les fonctions. <br>
-			<div class="decalage"><span style = "color:red">Dans l'exemple ci-dessous, on utilise les données tabN et nbTab. </span></div>
-			<center><img src="Photos/Param.jpg"width="350px" height="170px"></center>
+			L'instruction PARAM permet d'utiliser des donnï¿½es stockï¿½es dans une mï¿½moire. Cela nous ï¿½vite de rï¿½ï¿½crire des donnï¿½es ï¿½ chaque instruction. Nous utilisons le PARAM, par exemple, dans les fonctions. <br>
+			<div class="decalage"><span style = "color:red">Dans l'exemple ci-dessous, on utilise les donnï¿½es tabN et nbTab. </span></div>
+                        <br>
+			<img src="Photos/Param.jpg" id="image011" />
 			
 			<h4><u>RETURN</u></h4>
-			L'instruction RETURN va nous permettre de récupérer les instructions d'un programme pour pouvoir les réutiliser dans d'autres programmes. Nous l'utilisons, par exemple, dans les fonctions tout comme le PARAM. <br>
-			<div class="decalage"><span style = "color:red">Dans cet exemple, on récupère la valeur écrite dans résultat pour pouvoir la réutiliser dans un autre programme. </span></div><br>
-			<img class="imgDroite" src="Photos/Return.jpg" width="350px» height="170px"><br><br><br><br><br><br><br><br><br>
+			L'instruction RETURN va nous permettre de rï¿½cupï¿½rer les instructions d'un programme pour pouvoir les rï¿½utiliser dans d'autres programmes. Nous l'utilisons, par exemple, dans les fonctions tout comme le PARAM. <br>
+			<div class="decalage"><span style = "color:red">Dans cet exemple, on rï¿½cupï¿½re la valeur ï¿½crite dans rï¿½sultat pour pouvoir la rï¿½utiliser dans un autre programme. </span></div><br>
+			<img src="Photos/Return.jpg" id="image012" />
+                        <br><br>
 		
 			<h3><b><u>Qu'est-ce qu'une fonction? </u></b></h3>
-			Une fonction est un bout de programme conçu pour être réutilisé dans d'autres programmes.
+			Une fonction est un bout de programme conï¿½u pour ï¿½tre rï¿½utilisï¿½ dans d'autres programmes.
 		
 			<h3><b><u>Le CASE</u></b></h3>
-			La structure CASE permet d’exécuter une instruction selon la valeur d’une variable. C’est-à-dire qu’elle va vérifier si une variable a une certaine valeur et si cette variable possède cette valeur, alors elle exécute la condition. <br>
+			La structure CASE permet dï¿½exï¿½cuter une instruction selon la valeur dï¿½une variable. Cï¿½est-ï¿½-dire quï¿½elle va vï¿½rifier si une variable a une certaine valeur et si cette variable possï¿½de cette valeur, alors elle exï¿½cute la condition. <br>
 			<h3><b><u>Les tableaux</u></b></h3>
-			Les tableaux permettent de stocker plusieurs informations. Les tableaux sont stockés dans des variables et sont un ensemble ordonné de valeurs désignées par un indice. <br>
+			Les tableaux permettent de stocker plusieurs informations. Les tableaux sont stockï¿½s dans des variables et sont un ensemble ordonnï¿½ de valeurs dï¿½signï¿½es par un indice. <br>
 		
 			</div>
 		</section>

@@ -1,6 +1,7 @@
-body{
-background-color : black;
-height : 100%;
+body {
+    max-width: 1900px;
+    background-color : black;
+max-height : 100%;
 color: LimeGreen;
 font-family:goudy old style, Garamond, Times New Roman, serif;
 text-align : center;
@@ -22,8 +23,8 @@ cursor : url(cursor.ani), pointer;
 
 footer hr{
 color : LightSteelBlue;
-margin-left: 50px;
-margin-right: 50px;
+margin-left: 3%;
+margin-right: 3%;
 }
 .alignement-1{
 text-align : left;
@@ -32,7 +33,7 @@ ul{
 list-style-type: none;
 }
 h4{
-margin-left: 30px;
+margin-left: 3%;
 }
 .important{
 	color: #F42727; /*rouge*/
@@ -41,12 +42,12 @@ margin-left: 30px;
 }
 .alignement-2{
 	text-align: left;
-	margin-left: 25px;
-	margin-right: 25px
+	margin-left: 3%;
+	margin-right: 3%;
 }
 
 .decalage{
-	margin-left: 25px;
+	margin-left: 3%;
 }
 .py{
 background-image: url("../Photos/ban_verte.jpg");
@@ -56,15 +57,206 @@ background-size: auto;
 
 .imgDroite{
 	float: right;
-	margin-left: 10px;
-	margin-top: 10px;
+	margin-left: 1%;
+	margin-top: 1%;
 	
 }
 
 .imgGauche{
 	float: left;
-	margin-right: 10px;
+	margin-right: 1%;
 }
 b{
 	color:red;
 }
+
+
+/* ajouté : */
+
+h1 {
+    font-size: 5vw;
+    text-align: center;
+}
+
+h2 {
+    max-width: 2000px;
+    font-size: 4vw;
+}
+
+section {
+    max-width: 2000px;
+}
+
+.image001 {
+    max-width: 80%;
+    max-height: 50%;
+}
+
+.image002 {
+    max-width: 80%;
+    padding-right: 5%;
+}
+
+#imageVariables {
+    max-width: 60%;
+}
+
+/*  Langage_de_programmation.html   */
+
+.lesImages002 img {
+    max-width: 80%;
+    max-height: 50%;
+}
+
+/*  Langage_Python_theorie   */
+
+#imageCalcul {
+    max-width: 15%;
+    max-height: 50%;
+}
+
+#image003 {
+    max-width: 20%;
+    padding-right: 75px;
+}
+
+#image004 {
+    max-width: 10%;
+    /*padding-right: 300px;*/
+}
+
+#image005 {
+    max-width: 15%;
+}
+
+#image006 {
+    max-width: 20%;
+}
+
+/*  Langage_de_programmationex.html */
+
+.lesImages003 img {
+    max-width: 80%;
+    max-height: 50%;
+}
+
+/*  Princpipe_de_programmation.html */
+
+#corpsPrincipePrg {
+    text-align: center;
+}
+
+#image007 {
+    max-width: 50%;
+    padding: 10px;
+}
+
+#image008 {
+    max-width: 27%;
+    padding: 10px;
+}
+
+#image009, #image010, #image011, #image012 {
+    max-width: 50%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*  Site_internet_index.html    */
+
+#image013 {
+    max-width: 70%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#titreNotionsProgrammation {
+    font-size: 4vw;
+}
+
+.suiviProgrammation {
+    font-size: 3vw;
+}
+
+/*  histolp */
+
+#image014 {
+    max-width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#image015 {
+    min-width: 30%;
+    max-width: 35%;
+    display: block;
+    margin-left: auto;
+    max-height: 40%;
+}
+
+#image016 {
+    max-width: 35%;
+    min-width: 30%;
+}
+
+#image017 {
+    max-width: 50%;
+}
+
+#image018 {
+    max-width: 15%;
+}
+
+#image019 {
+    max-width: 30%;
+}
+
+#image020 {
+    max-width: 40%;
+}
+
+
+/*  langage_html    */
+
+#image021 {
+    max-width: 26%;
+}
+
+#image022 {
+    max-width: 40%;
+}
+
+#image023 {
+    max-width: 22%;
+}
+
+#image024 {
+    max-width: 15%;
+}
+
+#image025 {
+    max-width: 60%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*  pour C  index_exercice.htm  */
+
+#titreIndexExercices {
+    font-size: 5vw;
+}
+
+
+
+/*  pour PYTHON  index_exercice.htm  */
+
+#titreIndexExPython {
+    font-size: 5vw;
+}
+
